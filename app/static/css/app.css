@@ -1,0 +1,305 @@
+@font-face {
+font-family: "Beaufort";
+src: url("/static/fonts/beaufortforlol-regular.otf");
+}
+
+@font-face {
+font-family: "Beaufort Medium";
+src: url("/static/fonts/BeaufortforLPL-Medium.otf");
+}
+
+@font-face {
+font-family: "Beaufort Bold";
+src: url("/static/fonts/beaufortforlol-bold.otf");
+}
+
+body {
+    padding-top: 50px;
+    background-color: #0a1827;
+    color: #c4b96f;
+    font-family: "Beaufort";
+}
+
+.bg{
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    background-image: url('/static/resources/bg.jpg');
+    height: 100vh;
+    width: 100vw;
+    opacity: 0.2;
+    z-index: -10;
+}
+
+button, input[type="submit"]{
+    background: transparent;
+    border: 1px solid #937138;
+    border-radius: 6px;
+    margin: 5px;
+}
+
+button:hover ,input[type="submit"]:hover{
+    border-width: 2px;
+    font-weight: bold;
+}
+
+a, a:hover{
+    color: inherit;    
+}
+
+#navbar-header{
+    background-color: rgba(32,32,32,0.5);
+}
+
+#search-container{
+    display: block;
+    width: 13vw;
+    height: 90vh;
+    float: right;
+    overflow: hidden;
+    background: #0a182770;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #937138;
+    background: url(http://i62.tinypic.com/15xvbd5.png) no-repeat 100%;
+    width: 65%;
+}
+
+option{
+    background-color: #0a1827;
+}
+
+input[type='text']{
+    margin-left: 10px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #937138;    
+}
+
+#search-settings input[type='text']{
+    width: 71%;
+}
+
+#deck-container input[type='text']{
+    width: 25%;
+}
+
+#main-container{
+    width: 100%;
+}
+
+#search-settings{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 12vh;
+}
+
+#options{
+    font-size: 10pt;
+    position: absolute;
+    display: block;
+    right: 14vw;
+    top: 5vh;
+    z-index: 2;
+    background: #0a182770;
+    padding: 5px;
+    border-radius: 10px
+}
+
+.options>select{
+    width:144px;
+}
+
+.options>input[type="checkbox"]{
+    position: relative;
+    float: right;
+    padding-left: 2px;
+}
+
+.options input[type='number']{
+    width: 40px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #937138;
+}
+
+#results-container{
+    position: relative;
+    padding: 5px;
+    display: block;
+    height: 80vh;
+    overflow: hidden;
+}
+
+.card{
+    position:relative;
+    width: 10vw;
+    box-shadow: -2px 2px 2px #00000060;
+    z-index: 0;
+}
+
+.results{
+    position: relative;
+    margin-top: 5px;
+    margin-right: 5px;
+    float: right;
+}
+
+.results .card:hover{
+    position:relative;
+    width: 10.5vw;
+    z-index: 2;
+    margin: 0px;
+}
+
+.preview{
+    width: 23vw;
+    padding-bottom: 5px;
+}
+
+#preview-container{
+    position: absolute;
+    width: 24vw;
+    font-size: 0;
+    white-space: pre-line;
+    background: #0a182770;
+    padding: 5px;
+    border-radius: 10px;
+}
+
+#card-title > h2{
+    padding: 0px 0px 5px 0px;
+    margin: 0px;
+    font-weight: bold;
+    font-size: 25pt;
+    font-family: "Beaufort Bold"
+}
+
+#info{
+    position: relative;
+    height: 27vh;
+    overflow: scroll;
+    overflow-x: hidden;
+}
+
+#card-text {
+    font-size: 12pt;
+    text-align: justify;
+    text-justify: inter-word;   
+    padding-right: 13px;
+}
+
+#champion-preview p{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 10pt;
+}
+
+#epithet{
+    font-size: 13pt;
+    font-weight: bold;
+}
+
+#item-preview > p{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 10pt;
+}
+
+#spell-preview > p{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 10pt;
+}
+
+#monster-preview > p{
+    padding: 0px;
+    margin: 0px;
+    margin-bottom: 10px;
+    font-size: 10pt;
+}
+
+#deck-container{
+    position: absolute;
+    display: block;
+    left: 25vw;
+    height: 90vh;
+    width: 60vw;
+    overflow: hidden;
+    border-right: 2px solid #937138;
+    border-left: 2px solid #937138;
+    padding: 0px 5px 0px 5px;
+}
+
+#deck-settings{
+    display: flex;
+    width:100%;
+}
+
+#new-deck{
+    width: 40%;
+    margin: 0 auto;
+}
+
+#new-deck input{
+    min-width: 40%;
+}
+
+#load-deck{
+    width: 40%;
+    margin: 0 auto;
+}
+
+#file{
+    min-width: 40%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+#deck-file{
+    position: relative;
+    top: -2.5vh;
+    left: 6vw;
+    opacity:0;    
+}
+
+#deck-count{
+    font-family: "Beaufort Bold";
+    flex-basis: 10%;
+    margin: 0 auto;
+}
+
+.main-area{
+    display: flex;
+    flex-basis: 7vw;
+}
+
+.in-deck{
+    width: 3.7vw;
+}
+
+.in-deck .card{
+    width: 7vw;
+    box-shadow: -5px 2px 2px #00000060;
+    margin: 5px;
+    z-index: 0;
+}
+
+.in-deck .card:hover{
+    width: 7.3vw;
+    box-shadow: -5px 2px 2px #00000060;
+    margin: 0px;
+    z-index: 2;
+}

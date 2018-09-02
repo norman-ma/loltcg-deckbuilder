@@ -1,0 +1,67 @@
+<deck version="0.8">
+	<meta>
+		<game>loltcg</game>
+	</meta>
+	<superzone name="Deck">
+		<card><name id="5611">Sivir</name><set>Alpha</set></card>
+		<card><name id="5611">Sivir</name><set>Alpha</set></card>
+		<card><name id="5611">Sivir</name><set>Alpha</set></card>
+		<card><name id="1059">Taliyah</name><set>Alpha</set></card>
+		<card><name id="1059">Taliyah</name><set>Alpha</set></card>
+		<card><name id="1059">Taliyah</name><set>Alpha</set></card>
+		<card><name id="4462">Nasus</name><set>Alpha</set></card>
+		<card><name id="4462">Nasus</name><set>Alpha</set></card>
+		<card><name id="4462">Nasus</name><set>Alpha</set></card>
+		<card><name id="5201">Renekton</name><set>Alpha</set></card>
+		<card><name id="5201">Renekton</name><set>Alpha</set></card>
+		<card><name id="5201">Renekton</name><set>Alpha</set></card>
+		<card><name id="9563">Rammus</name><set>Alpha</set></card>
+		<card><name id="9563">Rammus</name><set>Alpha</set></card>
+		<card><name id="898">Tahm Kench</name><set>Alpha</set></card>
+		<card><name id="898">Tahm Kench</name><set>Alpha</set></card>
+		<card><name id="898">Tahm Kench</name><set>Alpha</set></card>
+		<card><name id="5911">The Rite of Ascension</name><set>Alpha</set></card>
+		<card><name id="5911">The Rite of Ascension</name><set>Alpha</set></card>
+		<card><name id="5911">The Rite of Ascension</name><set>Alpha</set></card>
+		<card><name id="5304">The Rite, Corrupted</name><set>Alpha</set></card>
+		<card><name id="5304">The Rite, Corrupted</name><set>Alpha</set></card>
+		<card><name id="5304">The Rite, Corrupted</name><set>Alpha</set></card>
+		<card><name id="7317">The Risen Kingdom</name><set>Alpha</set></card>
+		<card><name id="7317">The Risen Kingdom</name><set>Alpha</set></card>
+		<card><name id="7317">The Risen Kingdom</name><set>Alpha</set></card>
+		<card><name id="4612">The Ancient Kingdom</name><set>Alpha</set></card>
+		<card><name id="4612">The Ancient Kingdom</name><set>Alpha</set></card>
+		<card><name id="4612">The Ancient Kingdom</name><set>Alpha</set></card>
+		<card><name id="4903">The Risen Warriors</name><set>Alpha</set></card>
+		<card><name id="1616">Return to The Capital</name><set>Alpha</set></card>
+		<card><name id="1616">Return to The Capital</name><set>Alpha</set></card>
+		<card><name id="4003">The Sun Disc Medallion</name><set>Alpha</set></card>
+		<card><name id="4003">The Sun Disc Medallion</name><set>Alpha</set></card>
+		<card><name id="8433">Journey to the Capital</name><set>Alpha</set></card>
+		<card><name id="8433">Journey to the Capital</name><set>Alpha</set></card>
+		<card><name id="8433">Journey to the Capital</name><set>Alpha</set></card>
+		<card><name id="3712">Hunter&apos;s Instinct</name><set>Alpha</set></card>
+		<card><name id="3712">Hunter&apos;s Instinct</name><set>Alpha</set></card>
+		<card><name id="3712">Hunter&apos;s Instinct</name><set>Alpha</set></card>
+		<card><name id="5553">Ryze</name><set>Alpha</set></card>
+		<card><name id="4099">Trinity Force</name><set>Alpha</set></card>
+		<card><name id="4099">Trinity Force</name><set>Alpha</set></card>
+		<card><name id="5680">Teleport</name><set>Alpha</set></card>
+		<card><name id="5680">Teleport</name><set>Alpha</set></card>
+		<card><name id="5680">Teleport</name><set>Alpha</set></card>
+		<card><name id="8976">Recall</name><set>Alpha</set></card>
+		<card><name id="8976">Recall</name><set>Alpha</set></card>
+		<card><name id="8976">Recall</name><set>Alpha</set></card>
+		<card><name id="423">Thornmail</name><set>Alpha</set></card>
+		<card><name id="3221">Azir</name><set>Alpha</set></card>
+		<card><name id="3221">Azir</name><set>Alpha</set></card>
+		<card><name id="3221">Azir</name><set>Alpha</set></card>
+		<card><name id="1244">Nashor&apos;s Tooth</name><set>Alpha</set></card>
+		<card><name id="1244">Nashor&apos;s Tooth</name><set>Alpha</set></card>
+		<card><name id="2643">Item Shop</name><set>Alpha</set></card>
+		<card><name id="2643">Item Shop</name><set>Alpha</set></card>
+		<card><name id="2643">Item Shop</name><set>Alpha</set></card>
+		<card><name id="4210">Challenging Smite</name><set>Alpha</set></card>
+		<card><name id="4210">Challenging Smite</name><set>Alpha</set></card>
+	</superzone>
+</deck>

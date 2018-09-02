@@ -1,0 +1,67 @@
+<deck version="0.8">
+	<meta>
+		<game>loltcg</game>
+	</meta>
+	<superzone name="Deck">
+		<card><name id="3687">Rakan</name><set>Alpha</set></card>
+		<card><name id="3687">Rakan</name><set>Alpha</set></card>
+		<card><name id="3687">Rakan</name><set>Alpha</set></card>
+		<card><name id="9310">Xayah</name><set>Alpha</set></card>
+		<card><name id="9310">Xayah</name><set>Alpha</set></card>
+		<card><name id="9310">Xayah</name><set>Alpha</set></card>
+		<card><name id="9781">Ahri</name><set>Alpha</set></card>
+		<card><name id="9781">Ahri</name><set>Alpha</set></card>
+		<card><name id="9781">Ahri</name><set>Alpha</set></card>
+		<card><name id="4292">Rengar</name><set>Alpha</set></card>
+		<card><name id="4292">Rengar</name><set>Alpha</set></card>
+		<card><name id="756">Wukong</name><set>Alpha</set></card>
+		<card><name id="756">Wukong</name><set>Alpha</set></card>
+		<card><name id="2074">Return of the Monkey King</name><set>Alpha</set></card>
+		<card><name id="2074">Return of the Monkey King</name><set>Alpha</set></card>
+		<card><name id="2074">Return of the Monkey King</name><set>Alpha</set></card>
+		<card><name id="8889">Tide&apos;s Calling</name><set>Alpha</set></card>
+		<card><name id="8889">Tide&apos;s Calling</name><set>Alpha</set></card>
+		<card><name id="8889">Tide&apos;s Calling</name><set>Alpha</set></card>
+		<card><name id="721">Vastayan Respite</name><set>Alpha</set></card>
+		<card><name id="721">Vastayan Respite</name><set>Alpha</set></card>
+		<card><name id="721">Vastayan Respite</name><set>Alpha</set></card>
+		<card><name id="1224">Vastayan Territory</name><set>Alpha</set></card>
+		<card><name id="1224">Vastayan Territory</name><set>Alpha</set></card>
+		<card><name id="1224">Vastayan Territory</name><set>Alpha</set></card>
+		<card><name id="7979">Hunter&apos;s Instinct</name><set>Alpha</set></card>
+		<card><name id="7979">Hunter&apos;s Instinct</name><set>Alpha</set></card>
+		<card><name id="7979">Hunter&apos;s Instinct</name><set>Alpha</set></card>
+		<card><name id="7966">Love Birds&apos; Embrace</name><set>Alpha</set></card>
+		<card><name id="7966">Love Birds&apos; Embrace</name><set>Alpha</set></card>
+		<card><name id="7966">Love Birds&apos; Embrace</name><set>Alpha</set></card>
+		<card><name id="5933">Preparation</name><set>Alpha</set></card>
+		<card><name id="5933">Preparation</name><set>Alpha</set></card>
+		<card><name id="5933">Preparation</name><set>Alpha</set></card>
+		<card><name id="141">Recall</name><set>Alpha</set></card>
+		<card><name id="141">Recall</name><set>Alpha</set></card>
+		<card><name id="141">Recall</name><set>Alpha</set></card>
+		<card><name id="2882">Where the Magic is Hidden</name><set>Alpha</set></card>
+		<card><name id="2882">Where the Magic is Hidden</name><set>Alpha</set></card>
+		<card><name id="8583">Flash</name><set>Alpha</set></card>
+		<card><name id="8583">Flash</name><set>Alpha</set></card>
+		<card><name id="8583">Flash</name><set>Alpha</set></card>
+		<card><name id="3221">Challenging Smite</name><set>Alpha</set></card>
+		<card><name id="3221">Challenging Smite</name><set>Alpha</set></card>
+		<card><name id="3221">Challenging Smite</name><set>Alpha</set></card>
+		<card><name id="9453">Chilling Smite</name><set>Alpha</set></card>
+		<card><name id="9453">Chilling Smite</name><set>Alpha</set></card>
+		<card><name id="9453">Chilling Smite</name><set>Alpha</set></card>
+		<card><name id="9702">Teleport</name><set>Alpha</set></card>
+		<card><name id="9702">Teleport</name><set>Alpha</set></card>
+		<card><name id="9702">Teleport</name><set>Alpha</set></card>
+		<card><name id="1074">Barrier</name><set>Alpha</set></card>
+		<card><name id="1074">Barrier</name><set>Alpha</set></card>
+		<card><name id="1074">Barrier</name><set>Alpha</set></card>
+		<card><name id="1143">Tahm Kench</name><set>Alpha</set></card>
+		<card><name id="1143">Tahm Kench</name><set>Alpha</set></card>
+		<card><name id="1143">Tahm Kench</name><set>Alpha</set></card>
+		<card><name id="5010">Nami</name><set>Alpha</set></card>
+		<card><name id="5010">Nami</name><set>Alpha</set></card>
+		<card><name id="5010">Nami</name><set>Alpha</set></card>
+	</superzone>
+</deck>

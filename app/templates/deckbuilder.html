@@ -1,0 +1,173 @@
+{% extends "base.html" %}
+
+{% block main %}
+<div class="bg"></div>
+<div id="search-container" ng-controller="SearchController">
+    <form>
+        <div id="search-settings">
+            <label>Search</label><input type="text" ng-model="data.keyword"><br/>
+            <label>Card Type</label>
+            <select ng-model="data.card_type">
+                <option value=""></option>
+                <option value="CHAMPION">Champion</option>
+                <option value="PET">Pet</option>
+                <option value="SUMMONERSPELL">Summoner Spell</option>
+                <option value="NEUTRALMONSTER">Neutral Monster</option>
+                <option value="ITEM">Item</option>
+            </select>
+            <button ng-click="search()">Search</button><button ng-click="clear()">Clear</button><br>
+        </div>
+
+        <div id="options" ng-if="data.card_type !== ''">
+            <div ng-if="data.card_type=='CHAMPION'" class="options">
+                <label>Champion Region</label><br/>
+                <select ng-model="data.champ_region">
+                    <option value=""></option>
+                    <option value="DEMACIA">Demacia</option>
+                    <option value="NOXUS">Noxus</option>
+                    <option value="IONIA">Ionia</option>
+                    <option value="SHURIMA">Shurima</option>
+                    <option value="FRELJORD">Freljord</option>
+                    <option value="BILGEWATER">Bilgewater</option>
+                    <option value="SHADOWISLES">Shadow Isles</option>
+                    <option value="BANDLECITY">Bandle City</option>
+                    <option value="MOUNTTARGON">Mount Targon</option>
+                    <option value="PILTOVER">Piltover</option>
+                    <option value="ZAUN">Zaun</option>
+                    <option value="THEVOID">The Void</option>
+                    <option value="RUNETERRA">Runeterra</option>
+                </select><br/>
+
+                <label>Champion Class</label><br/>
+                <select ng-model="data.champ_class">
+                    <option value=""></option>
+                    <option value="MAGE">Mage</option>
+                    <option value="BURST">Burst</option>
+                    <option value="ARTILLERY">Artillery</option>
+                    <option value="BATTLEMAGE">Battlemage</option>
+                    <option value="ENCHANTER">Enchanter</option>
+                    <option value="CATCHER">Catcher</option>
+                    <option value="FIGHTER">Fighter</option>
+                    <option value="JUGGERNAUT">Juggernaut</option>
+                    <option value="DIVER">Diver</option>
+                    <option value="MARKSMAN">Marksman</option>
+                    <option value="SLAYER">Slayer</option>
+                    <option value="ASSASSIN">Assassin</option>
+                    <option value="SKIRMISHER">Skirmisher</option>
+                    <option value="TANK">Tank</option>
+                    <option value="VANGUARD">Vanguard</option>
+                    <option value="WARDEN">Warden</option>
+                </select><br/>
+
+                <label>Champion Type</label><br/>
+                <select ng-model="data.champ_type">
+                    <option value=""></option>
+                    <option value="ASPECT">Aspect</option>
+                    <option value="CELESTIAL">Celestial</option>
+                    <option value="CONSTRUCT">Construct</option>
+                    <option value="CREATURE">Creature</option>
+                    <option value="DARKIN">Darkin</option>
+                    <option value="DEMIGOD">Demigod</option>
+                    <option value="DEMON">Demon</option>
+                    <option value="HUMAN">Human</option>
+                    <option value="ICEBORN">Iceborn</option>
+                    <option value="PLANT">Plant</option>
+                    <option value="SPIRIT">Spirit</option>
+                    <option value="UNDEAD">Undead</option>
+                    <option value="VASTAYA">Vastaya</option>
+                    <option value="VOIDBORN">Voidborn</option>
+                    <option value="YORDLE">Yordle</option>
+                </select><br/><br/>
+            </div>
+
+            <div ng-if="data.card_type==='CHAMPION' || data.card_type==='ITEM'" class="options">
+                <label>HP</label>
+                <input type="number" min="0" max="4" ng-model="data.min_hp"> - <input type="number" min="0" max="20" ng-model="data.max_hp"><br/>
+                <label>AD</label>
+                <input type="number" min="0" max="4" ng-model="data.min_ad"> - <input type="number" min="0" max="4" ng-model="data.max_ad"><br/>
+                <label>AP</label>
+                <input type="number" min="0" max="4" ng-model="data.min_ap"> - <input type="number" min="0" max="4" ng-model="data.max_ap"><br/>
+            </div>
+
+            <div ng-if="data.card_type==='SUMMONERSPELL'" class="options">
+                <label>Spell Type</label><br/>
+                <select ng-model="data.spell_type">
+                    <option> </option>
+                    <option>NORMAL</option>
+                    <option>FIELDOFJUSTICE</option>
+                    <option>EQUIPPABLE</option>
+                </select><br/><br/>
+            </div>
+
+            <div ng-if="data.card_type==='ITEM'" class="options">
+                <label>Item Stats</label><br/>
+                <label>Cooldown Reduction</label><input type="checkbox" ng-model="data.cdr"><br/>
+                <label>Resistance</label><input type="checkbox" ng-model="data.res"><br/>
+                <label>Attack Speed</label><input type="checkbox" ng-model="data.ats"><br/>
+                <label>Critical Strike Chance</label><input type="checkbox" ng-model="data.crit"><br/>
+                <label>Life Steal</label><input type="checkbox" ng-model="data.ls"><br/>
+                <label>Penetration</label><input type="checkbox" ng-model="data.pen"><br/>
+                <label>Heal & Shield Power</label><input type="checkbox" ng-model="data.hsp"><br/>
+            </div><br/>
+        </div>
+    </form>
+
+    <div id="results-container">
+        <div ng-repeat="card in cards track by $index" ng-mouseover="hoverIn($index)" ng-click="addCard()" class="results">
+            <img ng-src="<< card.img >>" id="<< card.id >>" class="card">
+        </div>
+    </div>
+</div>
+
+<div id="preview-container" ng-controller="PreviewController">
+    <div ng-if="card != null">
+        <img ng-src="<< card.img >>" class="preview card">
+        <div id="info">
+            <div id="card-title">
+                <h2><< card.name >></h2>
+            </div>
+            <div ng-if="card.cardtype=='CHAMPION'" id="champion-preview">
+                <p><span id="epithet"><< card.epithet >></span><br/><< card.region >> <br/> << card.class[0] >><span ng-if="card.class[1] != null"> | << card.class[1] >> </span> <br/> << card.type[0] >><span ng-if="card.type[1] != null"> | << card.type[1] >></span><br/> HP << card.hp >> | AD << card.ad >> | AP << card.ap >>
+                </p>
+            </div>
+            <div ng-if="card.cardtype=='ITEM'" id="item-preview">
+                <p>HP +<< card.hp >> | AD +<< card.ad >> | AP +<< card.ap >><br/><span ng-repeat="stat in card.stats">+<< stat["qty"] >> << stat["stat"] >> <span ng-if="$index < card.stats.length - 1"> | </span> </span>
+                </p>
+            </div>
+            <div ng-if="card.cardtype=='SUMMONERSPELL'" id="spell-preview">
+                <p><< card.type >></p>
+            </div>
+            <div ng-if="card.cardtype=='PET' || card.cardtype=='NEUTRALMONSTER'" id="monster-preview">
+                <p>HP << card.hp >> | AD << card.ad >> | AP << card.ap >></p>
+            </div>
+            <p id="card-text"><< card.text >></p>
+        </div>
+    </div>
+</div>
+
+<div id="deck-container" ng-controller="DeckController">
+    <div id="deck-settings">
+        <div id="new-deck">
+            <label>Deck Name</label><input type="text" ng-model="deck.name"><br/>
+            <a ng-href="<< url >>" download="<< deck.name + '.dek' >>"><button ng-click="save()">Save</button></a><button ng-click="clear()">Clear</button><br/><br/>
+        </div>
+        <div id="load-deck">
+            <form id="load-form" name="load-form" enctype="multipart/form-data" ng-submit="load()" method="post">
+                <input type="submit" value="Load Deck"><input type="text" id="file" value="Browse..." readonly ><input type="file" id="deck-file" accept=".dek" size="50px">
+            </form>
+        </div>
+        <div id="deck-count">
+            <p>Count: << deck.cards.length >></p>
+        </div>
+    </div>
+    <div id="deck-area">
+        <div class="main-area" ng-repeat="row in rows">
+            <div ng-repeat="card in row track by $index" ng-click="removeCard(card.index)" ng-mouseover="hover(card.index)" class="in-deck">
+                <img ng-src="<< card.img >>" class="card">
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
