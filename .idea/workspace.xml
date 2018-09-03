@@ -2,7 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8766e8ab-c010-443c-973f-e9db52648ef7" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/migrations/versions/5bc74059d200_.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/migrations/versions/717f84d49d8f_.py" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,16 +18,16 @@
     <session id="1409291328">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="8" />
+          <entry key="project.closed" value="9" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.17" value="1" />
           <entry key="project.open.time.2" value="2" />
           <entry key="project.open.time.4" value="2" />
-          <entry key="project.open.time.5" value="4" />
+          <entry key="project.open.time.5" value="5" />
           <entry key="project.open.time.6" value="1" />
           <entry key="project.open.time.7" value="1" />
           <entry key="project.open.time.9" value="1" />
-          <entry key="project.opened" value="13" />
+          <entry key="project.opened" value="14" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -33,19 +37,19 @@
           <entry key="css" value="2698" />
           <entry key="html" value="6876" />
           <entry key="js" value="8738" />
-          <entry key="py" value="13184" />
-          <entry key="sql" value="122" />
+          <entry key="py" value="13190" />
+          <entry key="sql" value="126" />
           <entry key="txt" value="15" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="CSS" value="2698" />
-          <entry key="DBN-SQL" value="110" />
+          <entry key="DBN-SQL" value="114" />
           <entry key="HTML" value="6876" />
           <entry key="JavaScript" value="8738" />
           <entry key="PLAIN_TEXT" value="48" />
-          <entry key="Python" value="13446" />
+          <entry key="Python" value="13452" />
           <entry key="SQL" value="12" />
         </counts>
       </usages-collector>
@@ -56,11 +60,11 @@
           <entry key="css" value="6" />
           <entry key="dek" value="5" />
           <entry key="html" value="16" />
-          <entry key="ini" value="2" />
+          <entry key="ini" value="3" />
           <entry key="jpg" value="6" />
           <entry key="js" value="5" />
           <entry key="mako" value="2" />
-          <entry key="py" value="25" />
+          <entry key="py" value="26" />
           <entry key="sql" value="3" />
           <entry key="txt" value="2" />
         </counts>
@@ -72,8 +76,8 @@
           <entry key="HTML" value="16" />
           <entry key="Image" value="6" />
           <entry key="JavaScript" value="5" />
-          <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="25" />
+          <entry key="PLAIN_TEXT" value="10" />
+          <entry key="Python" value="26" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="5" />
         </counts>
@@ -87,47 +91,12 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" selection-start-line="9" selection-end-line="9" />
+                <state relative-caret-position="136">
+                  <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
                 </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/migrations/versions/717f84d49d8f_.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-167" />
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/migrations/script.py.mako">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/migrations/README">
-              <provider selected="true" editor-type-id="text-editor" />
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/migrations/env.py">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-983">
-                  <folding>
-                    <element signature="e#0#37#0" expanded="true" />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/migrations/alembic.ini">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="-273" />
               </provider>
             </entry>
           </file>
@@ -144,15 +113,22 @@
             <entry file="file://$PROJECT_DIR$/db.sql">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="136">
-                  <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
+                  <caret line="5" column="362" selection-start-line="5" selection-start-column="362" selection-end-line="5" selection-end-column="362" />
                 </state>
+              </provider>
+            </entry>
+          </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/migrations/alembic.ini">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-273" />
               </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/static/css/app.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="587">
+                <state relative-caret-position="1156">
                   <caret line="68" selection-start-line="68" selection-end-line="68" selection-end-column="17" />
                 </state>
               </provider>
@@ -167,6 +143,13 @@
               </provider>
             </entry>
           </file>
+          <file pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/migrations/versions/5bc74059d200_.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-643" />
+              </provider>
+            </entry>
+          </file>
         </leaf>
       </split-first>
       <split-second>
@@ -174,7 +157,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/static/css/app.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="298">
+                <state relative-caret-position="544">
                   <caret line="32" column="16" selection-start-line="32" selection-start-column="16" selection-end-line="32" selection-end-column="16" />
                 </state>
               </provider>
@@ -206,7 +189,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/flaskmigrate.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="119">
+                <state relative-caret-position="85">
                   <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
                   <folding>
                     <element signature="e#0#19#0" expanded="true" />
@@ -218,8 +201,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Procfile">
               <provider selected="true" editor-type-id="text-editor">
-                <state>
-                  <caret column="16" selection-start-column="16" selection-end-column="16" />
+                <state relative-caret-position="17">
+                  <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
                 </state>
               </provider>
             </entry>
@@ -250,9 +233,11 @@
       <find>trial</find>
       <find>T</find>
       <find>int</find>
+      <find>'</find>
     </findStrings>
     <replaceStrings>
       <replace>ilike</replace>
+      <replace>''</replace>
     </replaceStrings>
   </component>
   <component name="Git.Settings">
@@ -277,11 +262,12 @@
         <option value="$PROJECT_DIR$/app/templates/deckbuilder.html" />
         <option value="$PROJECT_DIR$/app/templates/base.html" />
         <option value="$PROJECT_DIR$/app/templates/home.html" />
-        <option value="$PROJECT_DIR$/db.sql" />
         <option value="$PROJECT_DIR$/flaskmigrate.py" />
         <option value="$PROJECT_DIR$/app/static/css/app.css" />
         <option value="$PROJECT_DIR$/Procfile" />
         <option value="$PROJECT_DIR$/app/models.py" />
+        <option value="$PROJECT_DIR$/db.sql" />
+        <option value="$PROJECT_DIR$/migrations/versions/5bc74059d200_.py" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
       </list>
     </option>
@@ -298,18 +284,12 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
             <path>
               <item name="loldeckbuilder" type="b2602c69:ProjectViewProjectNode" />
               <item name="loldeckbuilder" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="loldeckbuilder" type="b2602c69:ProjectViewProjectNode" />
-              <item name="loldeckbuilder" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="loldeckbuilder" type="b2602c69:ProjectViewProjectNode" />
@@ -326,6 +306,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -514,12 +495,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="4369">
           <caret line="266" column="41" selection-start-line="266" selection-start-column="41" selection-end-line="266" selection-end-column="41" />
-          <folding>
-            <element signature="e#229#242#0" expanded="true" />
-            <marker date="1535941912269" expanded="true" signature="1056:1106" ph="..." />
-            <marker date="1535941912269" expanded="true" signature="3147:3743" ph="..." />
-            <marker date="1535941912269" expanded="true" signature="10810:12076" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -540,10 +515,38 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home.html">
+    <entry file="file://$PROJECT_DIR$/migrations/versions/f6a53079d3bf_.py" />
+    <entry file="file://$PROJECT_DIR$/migrations/versions/fb0e0c177372_.py" />
+    <entry file="file://$PROJECT_DIR$/migrations/versions/4c5e1fec4c85_.py" />
+    <entry file="file://$PROJECT_DIR$/migrations/versions/717f84d49d8f_.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/script.py.mako">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/README">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/env.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
+        <state>
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="969">
+          <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1156">
+          <caret line="68" selection-start-line="68" selection-end-line="68" selection-end-column="17" />
         </state>
       </provider>
     </entry>
@@ -566,7 +569,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/flaskmigrate.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
+        <state relative-caret-position="85">
           <caret line="7" column="17" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="17" />
           <folding>
             <element signature="e#0#19#0" expanded="true" />
@@ -574,32 +577,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/css/app.css">
+    <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="587">
-          <caret line="68" selection-start-line="68" selection-end-line="68" selection-end-column="17" />
+        <state relative-caret-position="17">
+          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/versions/f6a53079d3bf_.py">
+    <entry file="file://$PROJECT_DIR$/db.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-112">
-          <caret line="6" column="3" lean-forward="true" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-          <folding>
-            <element signature="e#99#121#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/README">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/env.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-983">
-          <folding>
-            <element signature="e#0#37#0" expanded="true" />
-          </folding>
+        <state relative-caret-position="136">
+          <caret line="5" column="362" selection-start-line="5" selection-start-column="362" selection-end-line="5" selection-end-column="362" />
         </state>
       </provider>
     </entry>
@@ -608,47 +596,22 @@
         <state relative-caret-position="-273" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
+    <entry file="file://$PROJECT_DIR$/app/templates/home.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="16" selection-start-column="16" selection-end-column="16" />
+        <state relative-caret-position="51">
+          <caret line="3" column="49" selection-start-line="3" selection-start-column="49" selection-end-line="3" selection-end-column="49" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/versions/fb0e0c177372_.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/script.py.mako">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/db.sql">
+    <entry file="file://$PROJECT_DIR$/migrations/versions/5bc74059d200_.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="11" column="55" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="969">
-          <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/versions/4c5e1fec4c85_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-167" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/versions/717f84d49d8f_.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-167" />
+        <state relative-caret-position="-643" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
+        <state relative-caret-position="136">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
