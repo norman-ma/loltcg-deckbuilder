@@ -1,5 +1,5 @@
 from flask import Flask
-
+from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
@@ -13,6 +13,8 @@ db = SQLAlchemy(app)
 
 UPLOAD_FOLDER = './app/static/uploads'
 SECRET_KEY = 'Sup3r$3cretkey'
+
+migrate = Migrate(app, db)
 
 app.config.from_object(__name__)
 from app import views

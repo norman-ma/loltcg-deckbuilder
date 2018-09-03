@@ -125,7 +125,7 @@ def search_cards(keyword, ctype=''):
     sql = "select card_id from card "
 
     if keyword != '' and keyword is not None:
-        sql += "where (card.card_name like \'%" + keyword + "%\' or card.card_text like \'%" + keyword + "%\') "
+        sql += "where (card.card_name ilike \'%" + keyword + "%\' or card.card_text ilike \'%" + keyword + "%\') "
 
     if ctype != '' and ctype is not None:
         if 'where' in sql:
@@ -152,10 +152,10 @@ def search_cards(keyword, ctype=''):
 def search_champs(keyword, region, champ_class, champ_type, hp, ad, ap):
     query = db.session
 
-    sql = "select card.card_id from card join champion where card.card_id = champion.card_id "
+    sql = "select card.card_id from card, champion where card.card_id = champion.card_id "
 
     if keyword != '' and keyword is not None:
-        sql += "and (card.card_name like \'%" + keyword + "%\' or card.card_text like \'%" + keyword + "%\' or champion.epithet like \'%" + keyword + "%\') "
+        sql += "and (card.card_name ilike \'%" + keyword + "%\' or card.card_text ilike \'%" + keyword + "%\' or champion.epithet ilike \'%" + keyword + "%\') "
 
     if region != '' and region is not None:
         sql += "and champion.region = \'" + region + "\' "
@@ -197,7 +197,7 @@ def search_items(keyword, hp, ad, ap, stats):
 
     if len(stats) > 0:
 
-        sql = 'select card.card_id from card join item join item_has where card.card_id = item.card_id and item.card_id = item_has.card_id '
+        sql = 'select card.card_id from card, item, item_has where card.card_id = item.card_id and item.card_id = item_has.card_id '
 
         for i in range(len(stats)):
             if i == 0:
@@ -211,10 +211,10 @@ def search_items(keyword, hp, ad, ap, stats):
 
     else:
 
-        sql = "select card.card_id from card join item where card.card_id = item. card_id "
+        sql = "select card.card_id from card, item where card.card_id = item. card_id "
 
     if keyword != '' and keyword is not None:
-        sql += "and (card.card_name like \'%" + keyword + "%\' or card.card_text like \'%" + keyword + "%\') "
+        sql += "and (card.card_name ilike \'%" + keyword + "%\' or card.card_text ilike \'%" + keyword + "%\') "
 
     if hp[0] > 0 and hp[1] == 0:
         sql += "and item.hp = " + str(hp[0]) + " "
@@ -264,10 +264,10 @@ def search_items(keyword, hp, ad, ap, stats):
 def search_spells(keyword, stype=""):
     query = db.session
 
-    sql = "select card.card_id from card join summoner_spell where card.card_id = summoner_spell. card_id "
+    sql = "select card.card_id from card, summoner_spell where card.card_id = summoner_spell. card_id "
 
     if keyword != '' and keyword is not None:
-        sql += "and (card.card_name like \'%" + keyword + "%\' or card.card_text like \'%" + keyword + "%\') "
+        sql += "and (card.card_name ilike \'%" + keyword + "%\' or card.card_text ilike \'%" + keyword + "%\') "
 
     if stype != '' and stype is not None:
         sql += "and summoner_spell.spell_type = \'" + stype + "\' "
