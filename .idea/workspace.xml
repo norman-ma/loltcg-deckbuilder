@@ -33,7 +33,7 @@
           <entry key="css" value="2698" />
           <entry key="html" value="6876" />
           <entry key="js" value="8738" />
-          <entry key="py" value="13162" />
+          <entry key="py" value="13163" />
           <entry key="sql" value="122" />
           <entry key="txt" value="15" />
         </counts>
@@ -45,7 +45,7 @@
           <entry key="HTML" value="6876" />
           <entry key="JavaScript" value="8738" />
           <entry key="PLAIN_TEXT" value="48" />
-          <entry key="Python" value="13424" />
+          <entry key="Python" value="13425" />
           <entry key="SQL" value="12" />
         </counts>
       </usages-collector>
@@ -60,7 +60,7 @@
           <entry key="jpg" value="6" />
           <entry key="js" value="5" />
           <entry key="mako" value="2" />
-          <entry key="py" value="23" />
+          <entry key="py" value="24" />
           <entry key="sql" value="3" />
           <entry key="txt" value="2" />
         </counts>
@@ -73,7 +73,7 @@
           <entry key="Image" value="6" />
           <entry key="JavaScript" value="5" />
           <entry key="PLAIN_TEXT" value="9" />
-          <entry key="Python" value="23" />
+          <entry key="Python" value="24" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="5" />
         </counts>
@@ -87,8 +87,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="136">
-                  <caret line="8" selection-start-line="8" selection-end-line="8" />
+                <state relative-caret-position="153">
+                  <caret line="9" selection-start-line="9" selection-end-line="9" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -97,8 +97,10 @@
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/migrations/versions/fb0e0c177372_.py">
-              <provider selected="true" editor-type-id="text-editor" />
+            <entry file="file://$PROJECT_DIR$/migrations/versions/4c5e1fec4c85_.py">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-167" />
+              </provider>
             </entry>
           </file>
           <file pinned="false" current-in-tab="false">
@@ -308,6 +310,17 @@
               <item name="loldeckbuilder" type="b2602c69:ProjectViewProjectNode" />
               <item name="loldeckbuilder" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loldeckbuilder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loldeckbuilder" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loldeckbuilder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loldeckbuilder" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+              <item name="versions" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -585,9 +598,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/script.py.mako">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/migrations/README">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
@@ -605,9 +615,6 @@
         <state relative-caret-position="-273" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/migrations/versions/fb0e0c177372_.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/Procfile">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -622,10 +629,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/versions/fb0e0c177372_.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/versions/4c5e1fec4c85_.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-167" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/migrations/script.py.mako">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="8" selection-start-line="8" selection-end-line="8" />
+        <state relative-caret-position="153">
+          <caret line="9" selection-start-line="9" selection-end-line="9" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
