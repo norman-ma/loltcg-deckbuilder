@@ -20,6 +20,21 @@ body {
     font-family: "Beaufort";
 }
 
+.page-header{
+    text-align: center;
+    font-size: 50px;
+    font-family: "Beaufort Bold";
+    border-bottom: 2px solid #937138;    
+}
+
+.home{
+    position: relative;
+    font-size: 30px;
+    width: 40vw;
+    left: 30vw;
+    box-shadow: -2px 2px 2px #00000060;
+}
+
 .bg{
     position: absolute;
     top: 0px;
