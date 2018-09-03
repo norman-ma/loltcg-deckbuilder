@@ -255,8 +255,6 @@ def search_items(keyword, hp, ad, ap, stats):
             for s in stats:
                 all_in.append(s in cstat)
 
-            print cstat, stats, all_in
-
             if False not in all_in and card not in out:
                 out.append(card)
 
