@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8766e8ab-c010-443c-973f-e9db52648ef7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/static/css/app.css" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/css/app.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/deckbuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/deckbuilder.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -35,7 +33,7 @@
           <entry key="css" value="2735" />
           <entry key="html" value="7009" />
           <entry key="js" value="8738" />
-          <entry key="py" value="13191" />
+          <entry key="py" value="13192" />
           <entry key="sql" value="126" />
           <entry key="txt" value="15" />
         </counts>
@@ -47,7 +45,7 @@
           <entry key="HTML" value="7009" />
           <entry key="JavaScript" value="8738" />
           <entry key="PLAIN_TEXT" value="48" />
-          <entry key="Python" value="13453" />
+          <entry key="Python" value="13454" />
           <entry key="SQL" value="12" />
         </counts>
       </usages-collector>
@@ -86,11 +84,11 @@
     <splitter split-orientation="horizontal" split-proportion="0.5633188">
       <split-first>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="153">
-                  <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
+                <state relative-caret-position="136">
+                  <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -98,7 +96,7 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/templates/deckbuilder.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="510">
@@ -150,7 +148,7 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/static/css/app.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1156">
+                <state relative-caret-position="587">
                   <caret line="88" selection-start-line="88" selection-end-line="88" selection-end-column="17" />
                 </state>
               </provider>
@@ -288,9 +286,9 @@
         <option value="$PROJECT_DIR$/app/models.py" />
         <option value="$PROJECT_DIR$/db.sql" />
         <option value="$PROJECT_DIR$/migrations/versions/5bc74059d200_.py" />
-        <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app/static/css/app.css" />
         <option value="$PROJECT_DIR$/app/templates/deckbuilder.html" />
+        <option value="$PROJECT_DIR$/app/__init__.py" />
       </list>
     </option>
   </component>
@@ -434,19 +432,19 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49838188" visible="true" weight="0.15542677" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49838188" visible="true" weight="0.15542677" />
       <window_info id="Structure" order="1" sideWeight="0.50161815" side_tool="true" weight="0.16174921" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32939914" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.32939914" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32939914" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="8" weight="0.30686694" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.30686694" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" weight="0.3290993" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.32939914" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
@@ -595,10 +593,10 @@
         <state relative-caret-position="-273" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/db.sql">
+    <entry file="file://$PROJECT_DIR$/app/templates/deckbuilder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="7" column="270" lean-forward="true" selection-start-line="7" selection-start-column="270" selection-end-line="7" selection-end-column="270" />
+        <state relative-caret-position="510">
+          <caret line="29" column="60" lean-forward="true" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
         </state>
       </provider>
     </entry>
@@ -606,16 +604,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="543">
           <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="1" selection-start-line="9" selection-start-column="1" selection-end-line="9" selection-end-column="1" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -634,15 +622,25 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1156">
+        <state relative-caret-position="587">
           <caret line="88" selection-start-line="88" selection-end-line="88" selection-end-column="17" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/deckbuilder.html">
+    <entry file="file://$PROJECT_DIR$/db.sql">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="29" column="60" lean-forward="true" selection-start-line="29" selection-start-column="60" selection-end-line="29" selection-end-column="60" />
+        <state relative-caret-position="255">
+          <caret line="7" column="270" lean-forward="true" selection-start-line="7" selection-start-column="270" selection-end-line="7" selection-end-column="270" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="136">
+          <caret line="8" column="1" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
