@@ -4,9 +4,9 @@ from . import db
 class Card(db.Model):
     __tablename__ = 'card'
     card_id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(50))
-    text = db.Column(db.String(10000))
-    type = db.Column(db.String(50))
+    card_name = db.Column(db.String(50))
+    card_text = db.Column(db.String(10000))
+    card_type = db.Column(db.String(50))
     champions = db.relationship('Champion', backref='card', lazy=True, uselist=False)
     pets = db.relationship('Pet', backref='card', lazy=True, uselist=False)
     monsters = db.relationship('NeutralMonster', backref='card', lazy=True, uselist=False)
