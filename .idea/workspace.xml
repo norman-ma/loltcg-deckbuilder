@@ -33,7 +33,7 @@
           <entry key="css" value="2698" />
           <entry key="html" value="6876" />
           <entry key="js" value="8738" />
-          <entry key="py" value="13161" />
+          <entry key="py" value="13162" />
           <entry key="sql" value="122" />
           <entry key="txt" value="15" />
         </counts>
@@ -45,7 +45,7 @@
           <entry key="HTML" value="6876" />
           <entry key="JavaScript" value="8738" />
           <entry key="PLAIN_TEXT" value="48" />
-          <entry key="Python" value="13423" />
+          <entry key="Python" value="13424" />
           <entry key="SQL" value="12" />
         </counts>
       </usages-collector>
@@ -87,8 +87,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/__init__.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="272">
-                  <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+                <state relative-caret-position="136">
+                  <caret line="8" selection-start-line="8" selection-end-line="8" />
                   <folding>
                     <element signature="e#0#9#0" expanded="true" />
                   </folding>
@@ -624,8 +624,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/__init__.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" column="19" selection-start-line="16" selection-start-column="19" selection-end-line="16" selection-end-column="19" />
+        <state relative-caret-position="136">
+          <caret line="8" selection-start-line="8" selection-end-line="8" />
           <folding>
             <element signature="e#0#9#0" expanded="true" />
           </folding>
