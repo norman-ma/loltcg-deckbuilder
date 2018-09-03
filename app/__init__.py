@@ -13,6 +13,7 @@ app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True  # added just to suppress a 
 app.config['APPLICATION_ROOT'] = "/app/"
 
 db = SQLAlchemy(app)
+db.create_all()
 
 UPLOAD_FOLDER = './app/static/uploads'
 SECRET_KEY = 'Sup3r$3cretkey'
