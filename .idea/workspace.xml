@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8766e8ab-c010-443c-973f-e9db52648ef7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dbnavigator.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dbnavigator.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/db.sql" beforeDir="false" afterPath="$PROJECT_DIR$/db.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/flaskmigrate.py" beforeDir="false" afterPath="$PROJECT_DIR$/flaskmigrate.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -37,7 +33,7 @@
           <entry key="css" value="2698" />
           <entry key="html" value="6876" />
           <entry key="js" value="8738" />
-          <entry key="py" value="13110" />
+          <entry key="py" value="13112" />
           <entry key="sql" value="122" />
           <entry key="txt" value="15" />
         </counts>
@@ -49,7 +45,7 @@
           <entry key="HTML" value="6876" />
           <entry key="JavaScript" value="8738" />
           <entry key="PLAIN_TEXT" value="21" />
-          <entry key="Python" value="13322" />
+          <entry key="Python" value="13324" />
           <entry key="SQL" value="12" />
         </counts>
       </usages-collector>
@@ -178,7 +174,7 @@
       </split-first>
       <split-second>
         <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/static/css/app.css">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="298">
@@ -222,11 +218,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/Procfile">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="17">
-                  <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
+                <state>
+                  <caret column="25" selection-start-column="25" selection-end-column="25" />
                 </state>
               </provider>
             </entry>
@@ -312,6 +308,11 @@
             <path>
               <item name="loldeckbuilder" type="b2602c69:ProjectViewProjectNode" />
               <item name="loldeckbuilder" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="loldeckbuilder" type="b2602c69:ProjectViewProjectNode" />
+              <item name="loldeckbuilder" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -564,13 +565,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/Procfile">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="25" selection-start-line="1" selection-start-column="25" selection-end-line="1" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/db.sql">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
@@ -599,6 +593,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1156">
           <caret line="68" selection-start-line="68" selection-end-line="68" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Procfile">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret column="25" selection-start-column="25" selection-end-column="25" />
         </state>
       </provider>
     </entry>
