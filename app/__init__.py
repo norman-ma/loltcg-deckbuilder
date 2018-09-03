@@ -1,10 +1,13 @@
+import os
+
 from flask import Flask
 from flask_migrate import Migrate
 from flask_sqlalchemy import SQLAlchemy
 
 app = Flask(__name__)
 app.config['SECRET_KEY'] = "change this to be a more random key"
-app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://lol:per4mance@localhost/lolcardb?sslmode=require"
+#app.config['SQLALCHEMY_DATABASE_URI'] = "postgres://lol:per4mance@localhost/lolcardb"
+SQLALCHEMY_DATABASE_URI = os.environ['DATABASE_URL']
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = True  # added just to suppress a warning
 
 app.config['APPLICATION_ROOT'] = "/app/"
