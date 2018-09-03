@@ -14,6 +14,7 @@ app.config['APPLICATION_ROOT'] = "/app/"
 
 db = SQLAlchemy(app)
 db.create_all()
+db.session.commit()
 
 UPLOAD_FOLDER = './app/static/uploads'
 SECRET_KEY = 'Sup3r$3cretkey'
