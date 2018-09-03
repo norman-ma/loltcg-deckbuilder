@@ -14,7 +14,7 @@ class Card(db.Model):
     items = db.relationship('Item', backref='card', lazy=True, uselist=False)
 
 
-class Champion(Card):
+class Champion(db.Model):
     __tablename__ = 'champion'
     __table_args__ = {'extend_existing': True}
     card_id = db.Column(db.Integer, db.ForeignKey('card.card_id'), primary_key=True, nullable=False)
@@ -30,7 +30,7 @@ class Champion(Card):
     pets = db.relationship('Pet', backref='champion', lazy=True)
 
 
-class Pet(Card):
+class Pet(db.Model):
     __tablename__ = 'pet'
     __table_args__ = {'extend_existing': True}
     card_id = db.Column(db.Integer, db.ForeignKey('card.card_id'), primary_key=True, nullable=False)
@@ -39,7 +39,7 @@ class Pet(Card):
     belongs_to = db.Column(db.Integer, db.ForeignKey('champion.card_id'))
 
 
-class MeutralMonster(Card):
+class MeutralMonster(db.Model):
     __tablename__ = 'neutral_monster'
     __table_args__ = {'extend_existing': True}
     card_id = db.Column(db.Integer, db.ForeignKey('card.card_id'), primary_key=True, nullable=False)
@@ -48,14 +48,14 @@ class MeutralMonster(Card):
     monster_type = db.Column(db.String(12))
 
 
-class SummonerSpell(Card):
+class SummonerSpell(db.Model):
     __tablename__ = 'summoner_spell'
     __table_args__ = {'extend_existing': True}
     card_id = db.Column(db.Integer, db.ForeignKey('card.card_id'), primary_key=True, nullable=False)
     spell_type = db.Column(db.String(14))
 
 
-class Item(Card):
+class Item(db.Model):
     __tablename__ = 'item'
     __table_args__ = {'extend_existing': True}
     card_id = db.Column(db.Integer, db.ForeignKey('card.card_id'), primary_key=True, nullable=False)
