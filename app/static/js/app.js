@@ -255,5 +255,3 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
             });
     }
 }]);
-
-
