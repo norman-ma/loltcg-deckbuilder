@@ -232,7 +232,7 @@ def search_items(keyword, hp, ad, ap, stats):
     sql += "order by card.card_name asc;"
 
     res = query.execute(sql).fetchall()
-    print sql
+
     out = []
     for id in res:
         card = get_card(id[0])
@@ -395,7 +395,6 @@ def update_card(id):
             os.remove(path)
 
         data = request.form
-        print data
 
         ex = db.session
         sql = 'select * from card where card.card_id = ' + str(id) + ';'
@@ -560,11 +559,9 @@ def update_card(id):
             for s in res:
                 stats.append(s[0])
 
-            print stats
 
             item_stats = ast.literal_eval('[\''+data['stat_name'].replace(',','\',\'')+'\']')
             qtys = ast.literal_eval('[ \''+data['qty'].replace(',','\',\'')+'\' ]')
-            print item_stats, type(item_stats), qtys, type(qtys)
             for i in range(len(item_stats)):
 
                 if item_stats[i].decode('utf-8') in stats:
@@ -573,7 +570,6 @@ def update_card(id):
 
                     if qtys[i] != '':
                         sql += 'qty = ' + str(qtys[i])
-                        print
 
                     sql += ' where card_id = ' + str(id) + ' and stat_name = \'' + item_stats[
                         i] + '\';'
