@@ -68,5 +68,5 @@ class Item(db.Model):
 class ItemHas(db.Model):
     __tablename__ = 'item_has'
     card_id = db.Column(db.Integer, db.ForeignKey('item.card_id'), primary_key=True, nullable=False)
-    stat_name = db.Column(db.String(20))
+    stat_name = db.Column(db.String(20), primary_key=True)
     qty = db.Column(db.Integer)

@@ -7,6 +7,7 @@ This file creates your application.
 import base64
 import io
 import os
+import ast
 
 from app import app, db
 from flask import render_template, request, redirect, url_for, flash, json, jsonify, send_file, send_from_directory, \
@@ -32,9 +33,6 @@ def flash_errors(form):
 @app.route('/', methods=['GET'])
 def home():
     """Render website's home page."""
-
-    print(url_for("static", filename="card.html"))
-
     return render_template('home.html')
 
 
@@ -234,7 +232,7 @@ def search_items(keyword, hp, ad, ap, stats):
     sql += "order by card.card_name asc;"
 
     res = query.execute(sql).fetchall()
-
+    print sql
     out = []
     for id in res:
         card = get_card(id[0])
@@ -377,8 +375,220 @@ def get_card(id):
 @app.route('/card/<id>', methods=["GET"])
 def card(id):
     c = get_card(id)
-    del c['img']
     return jsonify(c)
+
+@app.route('/card/update', methods=['GET'])
+def update():
+    return render_template('update.html')
+
+@app.route('/card/<id>/update', methods=["POST"])
+def update_card(id):
+    if request.method == "POST":
+
+        file = request.files['file']
+        if file is not None:
+            filename = secure_filename(file.filename)
+            path = os.path.join('app/static/cards/', filename)
+            file.save(path)
+            os.remove('app/static/cards/'+id+'.jpg')
+            os.rename(path, 'app/static/cards/'+id+'.jpg')
+            os.remove(path)
+
+        data = request.form
+        print data
+
+        ex = db.session
+        sql = 'select * from card where card.card_id = ' + str(id) + ';'
+        res = ex.execute(sql).first()
+        ctype = res[3]
+
+        sql = 'update card set '
+        comma = False
+
+        if data['name'] != '':
+            sql += 'card_name = \'' + data['name']+'\''
+            comma = True
+
+        if data['text'] != '':
+            if comma:
+                sql += ','
+            sql += ' card_text = \'' + data['text'].replace('\\n','\n') + '\''
+
+        sql += ' where card_id = ' + str(id) +';'
+
+        ex.execute(sql)
+        ex.commit()
+
+        if ctype == "CHAMPION":
+            sql = 'update champion set '
+            comma = False
+
+            if data['epithet'] != '':
+                sql += 'epithet = \'' + data['epithet'] + '\' '
+                comma = True
+
+            if data['hp'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'hp = ' + str(data['hp'])
+                comma = True
+
+            if data['ad'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'ad = ' + str(data['ad'])
+                comma = True
+
+            if data['ap'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'ap = ' + str(data['ap'])
+                comma = True
+
+            if data['region'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'region = \'' + data['region'] + '\' '
+                comma = True
+
+            if data['class1'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'class1 = \'' + data['class1'] + '\' '
+                comma = True
+
+            if data['class2'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'class2 = \'' + data['class2'] + '\' '
+                comma = True
+
+            if data['type1'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'type1 = \'' + data['type1'] + '\' '
+                comma = True
+
+            if data['type2'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'type2 = \'' + data['type2'] + '\' '
+
+            sql += ' where card_id = ' + str(id) + ';'
+
+            ex.execute(sql)
+            ex.commit()
+
+        if ctype == "PET":
+            sql = 'update pet set '
+            comma = False
+
+            if data['hp'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'hp = ' + str(data['hp'])
+                comma = True
+
+            if data['ad'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'ad = ' + str(data['ad'])
+
+            sql += ' where card_id = ' + str(id) + ';'
+
+            ex.execute(sql)
+            ex.commit()
+
+        if ctype == "NEUTRALMONSTER":
+            sql = 'update neutral_monster set '
+            comma = False
+
+            if data['hp'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'hp = ' + str(data['hp'])
+                comma = True
+
+            if data['ad'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'ad = ' + str(data['ad'])
+
+            sql += ' where card_id = ' + str(id) + ';'
+
+            ex.execute(sql)
+            ex.commit()
+
+        if ctype == "SUMMONERSPELL":
+            sql = 'update neutral_monster set '
+
+            if data['spell_type'] != '':
+                sql += 'spell_type = ' + data['spell_type']
+
+            ex.execute(sql)
+            ex.commit()
+
+        if ctype == "ITEM":
+            sql = 'update item set '
+            comma = False
+
+            if data['hp'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'hp = ' + str(data['hp'])
+                comma = True
+
+            if data['ad'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'ad = ' + str(data['ad'])
+                comma = True
+
+            if data['ap'] != '':
+                if comma:
+                    sql += ', '
+                sql += 'ap = ' + str(data['ap'])
+
+            sql += ' where card_id = ' + str(id) + ';'
+
+            ex.execute(sql)
+            ex.commit()
+
+            sql = 'select stat_name from item_has where card_id = ' + str(id) + ';'
+            res = ex.execute(sql).fetchall()
+            stats = []
+            for s in res:
+                stats.append(s[0])
+
+            print stats
+
+            item_stats = ast.literal_eval('[\''+data['stat_name'].replace(',','\',\'')+'\']')
+            qtys = ast.literal_eval('[ \''+data['qty'].replace(',','\',\'')+'\' ]')
+            print item_stats, type(item_stats), qtys, type(qtys)
+            for i in range(len(item_stats)):
+
+                if item_stats[i].decode('utf-8') in stats:
+
+                    sql = 'update item_has set '
+
+                    if qtys[i] != '':
+                        sql += 'qty = ' + str(qtys[i])
+                        print
+
+                    sql += ' where card_id = ' + str(id) + ' and stat_name = \'' + item_stats[
+                        i] + '\';'
+
+                    ex.execute(sql)
+                    ex.commit()
+
+                else:
+
+                    sql = 'insert into item_has values (' + id + ',\'' + item_stats[i] + '\',' + str(qtys[i]) + ');'
+
+                    ex.execute(sql)
+                    ex.commit()
+
+    return card(id)
 
 
 @app.route('/deck/save/<name>', methods=["POST"])

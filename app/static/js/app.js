@@ -1,8 +1,16 @@
-const results = document.querySelector('#results-container');
-const searchScroll = new PerfectScrollbar(results);
+$(window).bind('hashchange', function() {
+    if (window.location.href.indexOf("deckbuilder") > -1){
+        const results = document.querySelector('#results-container');
+        const searchScroll = new PerfectScrollbar(results);
+    }
+});
 
 $('#deck-file').change(function(){
     $('#file').val($('#deck-file').val().replace(/.*[\/\\]/, ''));
+});
+
+$('#img-update').change(function(){
+    $('#img-text').val($('#img-update').val().replace(/.*[\/\\]/, ''));
 });
 
 var app = angular.module("LOLTCGDeckBuilder",[]);
@@ -92,7 +100,7 @@ app.controller("SearchController",['$scope','$http','$rootScope',function($scope
 
 }]);
 
-app.controller("DeckController",["$scope","$http","$rootScope",function($scope,$http,$rootScope,FileSaver){
+app.controller("DeckController",["$scope","$http","$rootScope",function($scope,$http,$rootScope){
     $scope.deck = {
             'name':'',
             'cards':[]
@@ -190,6 +198,62 @@ app.controller("DeckController",["$scope","$http","$rootScope",function($scope,$
                 //console.log(res);
             });
     };
+}]);
+
+app.controller("UpdateController",['$scope','$http','$rootScope',function($scope,$http,$rootScope){
+
+    $scope.data = {
+        "name": "",
+        "text": "",
+        "epithet": "",
+        "region": "",
+        "class1": "",
+        "class2": "",
+        "type1": "",
+        "type2": "",
+        "hp": "",
+        "ad": "",
+        "ap": "",
+        "spell_type": "",
+        "stat_name": [""],
+        "qty": [""]
+    }
+
+    $scope.id = ''
+
+    $scope.plusOne = function(){
+        $scope.data.stat_name.push("")
+        $scope.data.qty.push("")
+        console.log($scope.data.stat_name,$scope.data.qty)
+    }
+
+    $scope.minusOne = function(){
+        $scope.data.stat_name.splice(-1,1)
+        $scope.data.qty.splice(-1,1)
+        console.log($scope.data.stat_name,$scope.data.qty)
+    }
+
+    $scope.update = function(){
+        $rootScope.active = null;
+        var fd = new FormData();
+        fd.append('file', $("#img-update")[0].files[0]);
+        var n = Object.keys($scope.data)
+        for(key in n){
+            fd.append(n[key],$scope.data[n[key]])
+            //console.log(n[key],$scope.data[n[key]])
+        };
+        $http
+            .post('/card/'+$scope.id+'/update',fd,{
+                headers: {'Content-Type': undefined}
+            })
+            .then(function(res){
+                $rootScope.active = {
+                        'id':$scope.id,
+                        'img':res.data.img,
+                        'name': res.data.name
+                    }
+            });
+    }
 }]);
 
 

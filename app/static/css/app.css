@@ -338,3 +338,52 @@ input[type='text']{
     margin: 0px;
     z-index: 2;
 }
+
+#update-container{
+    position: absolute;
+    height: 90vh;
+    width: 30vw;
+    left: 25vw;    
+}
+
+#update-container input[type='number']{
+    width: 3vw;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #937138;
+}
+
+#id-update{
+    width: 10vw !important;
+    -moz-appearance: textfield;
+}
+
+#id-update::-webkit-inner-spin-button, #id-update::-webkit-outer-spin-button{
+    -webkit-appearance: none; 
+    margin: 0; 
+} 
+
+textarea{
+    background: #0a1827C2;
+    border: 1px solid #937138;  
+    border-radius: 4px;
+    width: 20vw;
+    height: 15vh;
+    margin: 10px
+}
+
+#text-label{
+    position: relative;
+    top: -14vh;
+}
+
+#update-container select{
+    width: 10vw;    
+}
+
+#img-update{
+    position: relative;
+    top: -27px;
+    left: 40px;
+    opacity: 0
+}

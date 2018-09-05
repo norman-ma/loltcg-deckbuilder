@@ -1,4 +1,29 @@
 --
+-- PostgreSQL database dump
+--
+
+-- Dumped from database version 9.5.14
+-- Dumped by pg_dump version 9.5.14
+
+SET statement_timeout = 0;
+SET lock_timeout = 0;
+SET client_encoding = 'UTF8';
+SET standard_conforming_strings = on;
+SELECT pg_catalog.set_config('search_path', '', false);
+SET check_function_bodies = false;
+SET client_min_messages = warning;
+SET row_security = off;
+
+--
+-- Data for Name: alembic_version; Type: TABLE DATA; Schema: public; Owner: lol
+--
+
+COPY public.alembic_version (version_num) FROM stdin;
+77d0a533a433
+\.
+
+
+--
 -- Data for Name: card; Type: TABLE DATA; Schema: public; Owner: lol
 --
 
@@ -209,6 +234,7 @@ COPY public.card (card_id, card_name, card_text, card_type) FROM stdin;
 5249	Ornn	Living Forge\nCooldown: 4 Turns\nDiscard 1 card: Add 1 Item card from your deck to your hand\nBellows Breath | 3 MANA | Range: 2\nCooldown: 2 Turns\nQuick: Shield this card for HP equal to half this card’s HP - 2 for 1 Phase and deal damage to all enemy cards in range in this card’s column equal to half the card’s HP - 2 (min 1). At the beginning of the next Phase, Mark each enemy card in range in this card’s column with Brittle for 2 Phases. If a card marked with Brittle is Disabled: Consume the mark and double the Disable duration.\nCall of the Forge God | 5 MANA | Range: 3\nCooldown: Once while this card is on the field\nDeal Damage to all enemy cards in this cards column equal to this card’s AP + 2, Slow all affected targets for 1 Phase and mark them with Brittle. At the beginning of the next Phase, if this card is not Disabled, Charmed or Taunted and still in this column in which this ability was cast: Target 1 enemy Zone in range, Reposition this card to the Frontline Zone of its column and flip a coin; If the result is Heads: Deal this abilty’s damage again to all cards in range in the target Zone’s column and Knock Up all affected cards for 1 Phase. 	CHAMPION
 5275	The First Lands	When this card is activated: You may reveal the top 3 cards of your Deck; Add 1 Summoner Spell or Ionia Champion from the revealed cards to your Hand and shuffle the others into the Deck. Once per turn, when a card(s) is shuffled from your Fountain into your Deck: you may draw 1 card or you may discard 1 card instead, and if you do: Add 1 Ionian Champion with HP less than or equal to the number of Summoner Spells in your Fountain or 1 Summoner Spell which lists “Ionia Champion” in its effect (except “The First Lands”) from your Deck to your Hand.	SUMMONERSPELL
 5288	The Warrior''s Glory	Target 1 Noxus Fighter or Slayer Champion you control: Equip this card to the target (this card is not treated as an Item). The equipped Champion gains 2 AD. Whenever the equipped Champion slays an enemy Champion: Heal the equipped Champion for half that card''s AD. If the equipped Champion would be slain or destroyed by a card effect: Send this card to the Fountain and the equipped Champion takes no damage from that attack, ability or effect. Only 1 “The Warrior''s Glory” may be equipped to a Champion.	SUMMONERSPELL
+8976	Recall	At the end of the Phase, activate one of the following effects:\n• Add 1 Champion from your Deck to your Fountain.\n• Add 1 Champion from your Fountain to your Hand.	SUMMONERSPELL
 5301	Backstreet Dealings	When an Item card is added to your Hand or equipped to an allied Champion by a card effect: Banish 1 Zaun Champion from your hand or Fountain; activate one of the following effects:\n• Draw 1 card\n• Add 1 Banished Item Card to your Hand\n• Equip 1 Item card in your Fountain to a Champion you control.\nYou may only activate 1 “Backstreet Dealings” per turn.	SUMMONERSPELL
 5304	The Rite, Corrupted	Quick: Banish 1 Human-type Shurima Champion you control  and 1 Demigod-type Shurima Champion from your Deck.; Summon 1 Demigod-type Shurima Champion from you Deck or Hand with a different name. If you control 1 “The Risen Kingdom”, destroy it ; Deal damage to all card''s on the field, except the summoned Champion, equal to the combined AD or AP of the the Champions banished for this card''s effect. If any enemy champion is slain by this effect: The summoned Champion gains HP, AD and AP equal to half the combined HP, AD and AP (respectively) of the Champions banished for this card''s effect. Banish the summoned card when it leaves the field. Only 1 “The Rite, Corrupted” may be used each turn.	SUMMONERSPELL
 5312	Sejuani	Fury of the North\nAt the beginning of each turn, Mark this card with Frost Armor. While this card is marked with Frost Armor it is immune to Slow and if this card is damaged: Half that damage and consume the mark. If this card Disables a card: Mark that card with Frozen. If this card attacks a card with Frozen: Consume the mark and deal bonus damage equal to half the card’s max HP - 2 (min 1).\nPermafrost | 3 MANA | Range: 2\nCooldown: 2 Turns\nWhen this card or an adjacent allied Champions with 1 attack range attacks: Add 1 mark of Frost to the target. Quick: Target 1 enemy card in range with 3 marks of Frost; Consume all the marks and Disable that target for 2 Phases\nGlacial Prison | 5 MANA | Range: 2\nCooldown: 3 Turns\nTarget 1 enemy Zone in range and flip a coin; If the result is Heads: Disable any card in that Zone for 2 Phases . Deal damage equal to this card’s AP + 1 to all Zones adjacent to the target zone and Slow the card’s affected for 1 Phase.	CHAMPION
@@ -333,17 +359,16 @@ COPY public.card (card_id, card_name, card_text, card_type) FROM stdin;
 8347	Morgana	Dark Binding | 3 MANA | Range: 2\nCooldown: 2 Turns\nTarget 1 enemy column in range; At the end of the phase, deal damage equal to this card’s AP to the first card in the target column and Ground the target for 2 Phases.\nBlack Shield | 3 MANA | Range: 2\nCooldown: 2 Turns\nQuick: Target 1 allied Champion in range; Shield the target for HP equal to this card’s AP  for up to 2 Phases and during the shield duration the target is immune to Crowd Control.\nSoul Shackles | 5 MANA | Range: 1\nCooldown: 3 Turns\nQuick: Target all cards in range and deal damage equal to this card’s AP to all targets. At the end of the Phase, deal this ability’s damage again to any target still in range and Disable those targets for 1 Phase.	CHAMPION
 8364	Chitinous Armor	Quick: Target 1 Void Champion you control and equip this card to the target (This card is not treated as an Item). The equipped Champions gains 2 HP and +1 Resistance. When the equipped card slays a card: The equipped card gains 1 HP and 1 AD/AP (adaptive). If the equipped card would be slain: Banish this card instead and leave the equipped card with 2 HP.	SUMMONERSPELL
 8377	Benevolence of the Poro King	Discard 1 card for every allied Champion marked with Frost (min 1 card); Draw 1 card for each enemy Champion marked with Frost	SUMMONERSPELL
-8423	Nunu	Consume | 2 MANA | Range: 1\nCooldown: Each Turn\nQuick: Target 1 Neutral Monster or Pet in range; Deal damage to the target equal to half of this card’s HP and Heal this card for this card’s AP + 2 HP.\nBlood Boil | 3 MANA | Range: 1\nCooldown: Cooldown: 3 Turns\nQuick: This card Channels for 2 Phases; During the Channel: Slow all enemy card’s in range for 2 Phases. At the end of the Channel deal damage equal to 2 x this card’s AP + 1 to all enemy cards in range. If this the Channel is Interrupted: deal damage equal to this card’s AP instead.	CHAMPION
 8433	Journey to the Capital	Send 1 Shurima Champion you control to the Fountain: Draw 2 cards.	SUMMONERSPELL
 8453	The Twisted Treeline	Send 1 Undead-type Champion from your Deck to the Fountain; Undead-type Champions gain +1 Attack Speed until the nd pf the turn. but only Undead-type Champions may attack this turn. While this card is in the Fountain, you may Banish this card and if you do: Summon 1 Undead-type Champion from your Fountain. You may only activate 1 effect of “The Twisted Treeline” per turn.	SUMMONERSPELL
 9065	Diana	Crescent Strike | 2 MANA | Range: 2\nCooldown: Each Turn\nTarget 1 enemy Zone in range and flip a coin; if the Result is Heads: Deal damage to that Zone and any zone beside and infront of that Zone in the column to the right of that Zone equal to this card’s AP - 1 and mark affected cards with Moonlight for 2 Phases.\nPale Cascade | 3 MANA\nCooldown: 2 Turns\nQuick: Target 1 enemy card in range; Dash to the target and deal damage to the Target equal to this card’s AP. If the Target was marked with Moonlight refresh this ability’s coldown and refund its mana cost.	CHAMPION
+9728	Rift Herald	“Rift Herald” is immune to all forms of crowd control and if it has not been attacked for 1 Turn it will go back to full HP. At the beginning and end of each turn; “Rift Herald” attacks the last card that damaged it. Once per turn, when a you or a Champion you control damages this card: Flip a Coin and if the result is Heads: this card takes 6 damage, but it’s next attack deals 2 bonus damage.\nEye of the Herald\nWhen a player slays this card: add this card to their hand. THis card may be summoned as a Pet with 10 HP within 3 turns of slaying this card and this card’s first attack on a structure deals damage equal to half this card’s HP - 2 (min 2).	NEUTRALMONSTER
 8462	Fiora	Duelist’s Dance\nAt the beginning of each turn, mark all adjacent enemy champions with Vital until the end of the turn. If this card attacks a marked champion: Flip a coin; If the result is Heads: Deal bonus damage to that champion equal to half of the target’s max HP - 2 (min 1) ignoring Resistance Stacks, Heal this card for half this card’s AD, consume the Vital mark and this card can attack again this turn. Quick: This card may Reposition once again this turn.\nRiposte | 4 MANA\nCooldown: 3 Turns\nQuick: This card becomes immune to all damage and Crowd Control for 1 Phase, but cannot Reposition or declare attacks. If this card would be affected by a Disarm, Taunt, Charm or Displacement from an enemy card during this ability duration, Disarm that card for 1 Phase instead.\nGrand Challenge | 5 MANA | Range: 1\nCooldown: 3 Turns\nTarget 1 enemy Champion in range and mark them with a Vital. This turn, if a Vital mark on the target is consumed: Deal 1 additional damage to the target and if the target is slain this turn, heal all allied champions adjacent to the target for health equal to half this card’s AD x number of Vitals consumed this Turn.	CHAMPION
 8504	Gargoyles Stoneplate	Stone Skin\nUNIQUE: The equipped Champion gains +1 Resistance for each adjacent enemy Champion.\nMetallicize\nUNIQUE: Active: Quick: For 2 Phases, double the equipped Champion''s HP.	ITEM
 8570	Frozen Heart	Aura\nAdjacent enemy Champions lose 1 Attack Speed stack	ITEM
 8626	Xayah	Clean Cuts\nWhen this card attacks, if this card or “Rakan” has used an ability earlier this turn; the attack also deals damage equal to half this card’s AD to any card behind the target. Mark the target’s column with Feather until the end of the turn.\nBlade Caller | 3 MANA\nCooldown: 2 Turns\nQuick: Root and deal damage equal to half this card’s AD + number of Feathers on the field to all units in columns marked with Feather and remove all Feathers from the field.\nFeather Storm | 6 MANA\nCooldown: Once while this card is on the field\nQuick: This card becomes Untargetable for 1 Phase; Deal damage equal to this card’s AD to all units in range and mark each affected column with Feather.	CHAMPION
 8663	Iceborn Gauntlet	Spellblade\nCooldown: Each Turn\nWhen the equipped Champion activates an effect: The equipped Champion''s next attack deals bonus On-Hit damage equal to it''s original AD. Abilities which apply On Hit effects apply Spellblade''s damage as well.\nIcy Zone\nActivating Spellblade Slows all champions on or beside the attack target''s Zone for 1 Phase.	ITEM
 8665	Karthus	Death Defied\nWhen this card is slain: This card becomes untargetable for 2 Phases, afterwhich it is sent to the Fountain; dealing damage to adjacent enemy units equal to half of this card’s AP each Phase. During this time, this card may not Reposition or attack, but may activate 1 available ability, at no cost.\nLay Waste | 2 MANA | Range: 2\nCooldown: Each Turn\nUp to 2 times per turn, target 2 adjacent enemy Zones: Deal damage to the target Zones equal to half of this card’s AP. If this ability only damages to 1 unit: This ability deals double damage.\nRequiem | 7 MANA | Range: Global\nCooldown:Cooldown: Once while this card is on the field\nQuick: Channel for 1 Phase; At the beginning of the next Phase deal damage to all enemy champions equal to this card’s AP + 1. 	CHAMPION
-8696	Abyssal Mask	Eternity\nUNIQUE: When the equipped Champion is damaged: Restore 1 Mana. When the equipped Champion uses mana as a cost for an ability: Heal the equipped Champion for 1 HP.\nAura\nUNIQUE: Adjacent enemy Champions take 1 bonus damage from allied card''s abilities.	ITEM
 8751	Smite	Quick: Target 1 Pet or Neutral Monster; Deal 5 damage to the target.	SUMMONERSPELL
 8764	The Bloodharbor Tavern	Whenever you would flip a coin or roll a die for a Bilgewater Champion''s ability or a Summoner Spell''s effect, except “The Bloodharbor Tavern”: You may do a second coin flip or dice roll and if you do: Use the second result instead. Once per turn, if you draw a card as a result of a card effect you may flip a coin; If the result is Heads: Draw another card. At the end of the turn, if you control no Bilgewater Champions, flip a coin; If the result is Heads:you may summon 1 Bilgewater Champion from your Hand or Deck, but if the result is Tails: Destroy this card.	SUMMONERSPELL
 8801	Ocean Drake	This card is immune to all forms of crowd control and If it has not been attacked for 1 Turn it will go back to full HP. At the beginning and end of each turn; this card attacks the last card that damaged it. When this card attacks a card, Slow the target for 1 Phase\nDragon Slayer\nGain 1 Dragon Slayer Stack and for the rest of the duel, At the end of each Phase Heal all allied cards for 1 HP (This effect can stack with other “Ocean Drake” kills).	NEUTRALMONSTER
@@ -353,7 +378,6 @@ COPY public.card (card_id, card_name, card_text, card_type) FROM stdin;
 8926	Charge of the Minions	Summon 1 Minion Token to  an allied Zone. Minion Tokens have 2 HP, 1 AD and 2 Range, but only take 1 damage from attacks and abilities. Minion Tokens can only attack cards in their column and must attack. If no cards are available as attack targets, Minion Tokens will attack Structures.	SUMMONERSPELL
 8955	Lich Bane	Spellblade\nCooldown: Each Turn\nWhen the equipped Champion activates an effect: The equipped Champion''s next attack deals bonus On-Hit damage equal to half the equipped Champion''s AP. Abilities which apply On Hit effects apply Spellblade''s damage as well.	ITEM
 8967	Hecarim	Warpath\nThis card gains AD equal to its Reposition range - 1.\nDevastating Charge | 3 MANA | Range: 1\nCooldown: 2 Turns\nQuick: This card gains 1 Reposition range for 2 Phases. For this duration this card’s next attack gains 1 range, deals bonus damage equal to half this card’s AD - 1 and this card Dashes to the target. Reposition the target to another Zone in its Column.\nUnslaught of Shadows | 5 MANA | Range: 2\nCooldown: 3 Turns\nQuick: Target 1 enemy Zone in range and Dash to that Zone; Deal damage equal to this card’s AD to all units in the target Zone’s column and Disable all cards on or beside the target Zone.	CHAMPION
-8976	Recall	At the end of the Phase, activate one of the following effects:\n• Add 1 Champion from your Deck to your Fountain.\n• Add 1 Champion from your Fountain to your Hand.	SUMMONERSPELL
 9097	Evelynn	Demon Shade\nAt the beginning of each Turn: This card enters Demon Shade until it declares an attack. While in Demon Shade: Heal this card for half this card’s AP - 1 at the beginning of each Phase. This card’s attacks deal damage equal to half this card’s AP. After Summoner Level 6, this card is Camouflaged while in Demon Shade\nAllure | 3 MANA | Range: 2\nCooldown: 2 Turns\nQuick: Target 1 enemy Champion or Neutral Monster in range and mark it with Allure for 2 Phases. This card gains 1 Range when attacking cards marked with Allure and the attack deals damage equal to this card’s AP + 2, Charms the target and reduces the target’s Resistance by 2 for 2 Phases.\nLast Caress | 5 MANA Range: 2\nCooldown: 3 Turns\nQuick: Deal damage equal to this card’s AP to all adjacent enemy cards and Dash to an adjacent Backline Zone. If a card’s HP is below half its max HP: this ability deals damage equal to 1.5 x this card’s AP instead.	CHAMPION
 9125	Dormant Power	While you have 3 or less cards in your hand; Banish up to 2 Void Champions from your Fountain and draw 1 card for each card banish by this effect. If you have no Champions in your Fountain: Target 1 Banished Voidborn-type Champion; Summon the target, and if all your Banished Champions are Void Champions: the target gains 2 AD/AP (adaptive). At the end of the turn: Banish all the cards in your hand.	SUMMONERSPELL
 9161	Within These Petricite Walls	When this card is activated: Add 1 Demacia Champion from your Deck to your Hand. When your opponent activates a Summoner Spell: You may send 1 Summoner Spell from your hand to the Fountain and if you do: Negate your opponent''s Summoner Spell effect. While you have no Summoner Spells in your Fountain: Each Demacia Champion you control gains HP and AD/AP(adaptive) equal to half the number of Summoner Spells in your Banish Zone + 1.	SUMMONERSPELL
@@ -378,7 +402,6 @@ COPY public.card (card_id, card_name, card_text, card_type) FROM stdin;
 9700	Medal of Honor	Target 1 Yordle-type Champion you control; Equip this card to the target (This card is not treated as a Item). Enemy champions with the same Region as the equipped Champion cannot target the equipped card for an attack or ability. If the equipped Champion damages a card with the same Region as itself: destroy this card. Only 1 “Medal of Honor” may be equipped to a Champion.	SUMMONERSPELL
 9707	Shrine of the Rift Scuttler	Look at the top 3 cards in your Deck; Add one of the cards to your Hand and Shuffle the other two into your Deck. You cannot activate other Summoner Spells the turn you activate this card.	SUMMONERSPELL
 9708	Crest of Insight	Target  1 Champion you control: Half that card''s mana costs for the rest of the turn.	SUMMONERSPELL
-9728	Rift Herald	“Rift Herald” is immune to all forms of crowd control and if it has not been attacked for 1 Turn it will go back to full HP. At the beginning and end of each turn; “Rift Herald” attacks the last card that damaged it. Once per turn, when a you or a Champion you control damages this card: Flip a Coin and if the result is Heads: this card takes 6 damage, but it’s next attack deals 2 bonus damage.\nEye of the Herald\nWhen a player slays this card: add this card to their hand. THis card may be summoned as a Pet with 10 HP within 3 turns of slaying this card and this card’s first attack on a structure deals damage equal to half this card’s HP - 2 (min 2).	NEUTRALMONSTER
 9775	Ezreal	Mystic Shot | 2 MANA | Range: 2\nCooldown: Each Turn\nTarget 1 enemy Zone in range and flip a coin; If the result is Heads: Deal damage to the first card in range in the target’s column equal to half this card’s AD + half this card’s AP + 1 apply On-Hit effects and reduce this card’s other ability’s cooldowns by 1.\nArcane Shift | 3 MANA | Range: 2\nCooldown: 3 Turns\nQuick: Target 1 Allied Zone in range and Dash to the target Zone; Deal damage to the first card in range in th’s card’s column equal to half this card’s AD.\nTrueshot Barrage | 5 MANA | Range: Global\nCooldown: 4 Turns\nQuick: Target 1 Column; at the end of the Phase, Deal damage equal to this card’s AD + this card’s AP + 1 to the first card in the target column and half that damage to any cards behind that card. 	CHAMPION
 9779	Quinn & Valor	Harrier\nAt the beginning of each turn, if there is a card(s) on your enemy’s side of the field, roll a die until the result corresponds with an inhabited Zone; Mark any unit in that zone with Harrier. If Quinn attacks a marked unit that attack deals bonus damage equal to half this card’s AD and consume the mark.\nBlinding Assault | 3 MANA | Range: 2\nCooldown: 2 Turns\nQuick: Target 1 card in range and flip a coin; If the result is Heads: deal damage equal to this card’s AD, Blind the target for 1 Phase and for that duration the target cannot target cards to activate abilities.\nBehind Enemy Lines | 2 MANA\nCooldown: Each Turn\nCooldown: Each Turn\nThis card gains 1 Reposition range until it attacks, activates an ability or is damaged. While this ability is active, if this card attacks or activates an ability: Deal damage to all adjacent enemy champions equal to half this card’s AD + 1. When this card is summoned: activate this ability with no cost.	CHAMPION
 9791	Yordle Barrage	Quick: If you control 2 or more Champions and all the Champions you control are Yordle-type, summon as many Yordle-type Champions with different names as possible. Allied Yordle-Type Champions gain 1 AD/AP (adaptive) for each allied Champion with a different Region until the end of your next turn. At the end of your next turn: Send Champions you control to the Fountain equal to the number of Champions summoned by this effect. You cannot activate Summoner Spells or Champion abilities for the rest of the turn.	SUMMONERSPELL
@@ -389,7 +412,16 @@ COPY public.card (card_id, card_name, card_text, card_type) FROM stdin;
 9933	The Lost Tales	Add 1 Demigod-type Freljord Champion from your deck to your hand. You may remove 4 Stacks of Frost from anywhere on the field, and if you do: Summon the Champion instead.	SUMMONERSPELL
 9935	Volibear	Rolling Thunder | 2 MANACooldown: Each Turn\nQuick: This card gains 1 Reposition range during this phase. This card’s next attack gains 1 range, deals 1 bonus damage and Knocks Up the target. If the target was in the Backline Row also Reposition is to the Frontline Row of its column. This card may attack once again this Turn.\nMajestic Roar | 3 MANA | Range: 1\nCooldown: 2 Turns\nQuick: Deal damage to all enemy cards in range equal to this card’s AP + 1. If this ability affects a Pet: Displace that card instead. If this ability affects a card that is Knocked Up deal bonus damage equal to this card’s AP. \nThunder Claws | 5 MANA | Range: 1\nCooldown: 3 Turns\nDeal damage to all cards in range equal to this card’s AP + 1. During this turn, this card’s attacks deal bonus damage equal to this card’s AP to the target and all enemy card’s adjacent the the target.	CHAMPION
 9975	Rabadon''s Deathcap	UNIQUE: The equipped Champion gains AP equal to half it''s AP - 2 (canculated after adding all AP gained from other Items, abilities and effects).	ITEM
+8696	Abyssal Mask	Eternity\nUNIQUE: When the equipped Champion is damaged: Restore 1 Mana. When the equipped Champion uses mana as a cost for an ability: Heal the equipped Champion for 1 HP.\nAura\nUNIQUE: Adjacent enemy Champions take 1 bonus damage from allied card''s abilities.	ITEM
+8423	Nunu & Willump	Call of the Freljord\nOnce per turn, when this card attacks an enemy Champion, Neutral Monster or Structure, if the target is different from the target of its last attack: this card and 1 adjacent allied Champion gain +1 Attack Speed until the end of the turn. At the end of each turn: Disable all adjacent Champions which are Slowed for 1 Phase.\nConsume | 2 MANA | Range: 1\nCooldown: Each Turn\nQuick: Target 1 enemy unit dealing damage equal to half this card’s max HP - 4 + half this card’s AP and Heal this card for the damage dealt. If the target is a Neutral Monster or Pet: Triple this ability’s damage and that damage ignores Resistance. If this card is below half it’s max HP: Increase the Heal by 2.\nAbsolute Zero | 5 MANA | Range: 2\nCooldown: 3 Turns\nQuick: This card Channels for up to 2 Phases; During the Channel: Slow all enemy card’s in range for 2 Phases and Shield this card for half this card’s bonus HP + 2. At the end of the Channel deal damage equal to this card’s AP x the Channel duration + the Channel duration.	CHAMPION
 \.
+
+
+--
+-- Name: card_card_id_seq; Type: SEQUENCE SET; Schema: public; Owner: lol
+--
+
+SELECT pg_catalog.setval('public.card_card_id_seq', 1, false);
 
 
 --
@@ -515,7 +547,6 @@ COPY public.champion (card_id, epithet, hp, ad, ap, region, class1, class2, type
 8111	The Seneschal of Demacia	5	2	0	DEMACIA	FIGHTER	DIVER	HUMAN	\N
 8170	The Outlaw	5	3	0	BILGEWATER	MARKSMAN	FIGHTER	HUMAN	\N
 8347	Fallen Angel	5	1	2	RUNETERRA	MAGE	CATCHER	SPIRIT	\N
-8423	The Yeti Rider	10	1	2	FRELJORD	TANK	WARDEN	HUMAN	\N
 8462	The Grand Duelist	6	2	0	DEMACIA	FIGHTER	SKIRMISHER	HUMAN	\N
 8626	The Rebel	4	2	0	IONIA	MARKSMAN	\N	VASTAYA	\N
 8665	The Deathsinger	5	1	3	SHADOWISLES	MAGE	BATTLEMAGE	UNDEAD	\N
@@ -538,6 +569,7 @@ COPY public.champion (card_id, epithet, hp, ad, ap, region, class1, class2, type
 9779	Demacia''s Wings	5	2	0	DEMACIA	MARKSMAN	DIVER	HUMAN	\N
 9873	The Fae Sorceress	4	1	2	BANDLECITY	MAGE	ENCHANTER	YORDLE	\N
 9935	The Thunder''s Roar	9	1	1	FRELJORD	TANK	VANGUARD	DEMIGOD	\N
+8423	The Boy and his Yeti	10	1	2	FRELJORD	TANK	WARDEN	HUMAN	CREATURE
 \.
 
 
@@ -609,7 +641,6 @@ COPY public.item (card_id, hp, ad, ap) FROM stdin;
 8504	0	0	0
 8570	0	0	0
 8663	0	0	0
-8696	2	0	0
 8855	0	0	0
 8908	2	0	0
 8955	0	0	2
@@ -618,6 +649,7 @@ COPY public.item (card_id, hp, ad, ap) FROM stdin;
 9302	0	1	0
 9309	1	0	0
 9975	0	0	3
+8696	2	0	0
 \.
 
 
@@ -687,8 +719,6 @@ COPY public.item_has (card_id, stat_name, qty) FROM stdin;
 8570	RESISTANCE	3
 8663	COOLDOWNREDUCTION	2
 8663	RESISTANCE	1
-8696	COOLDOWNREDUCTION	1
-8696	RESISTANCE	1
 8855	ATTACKSPEED	1
 8855	RESISTANCE	1
 8908	RESISTANCE	1
@@ -698,6 +728,8 @@ COPY public.item_has (card_id, stat_name, qty) FROM stdin;
 9293	RESISTANCE	1
 9309	COOLDOWNREDUCTION	1
 9309	HEALANDSHIELDPOWER	1
+8696	RESISTANCE	1
+8696	COOLDOWNREDUCTION	1
 \.
 
 
@@ -896,143 +928,6 @@ COPY public.summoner_spell (card_id, spell_type) FROM stdin;
 9927	NORMAL
 9933	NORMAL
 \.
-
-
---
--- Name: alembic_version_pkc; Type: CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.alembic_version
-    ADD CONSTRAINT alembic_version_pkc PRIMARY KEY (version_num);
-
-
---
--- Name: pk_card; Type: CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.card
-    ADD CONSTRAINT pk_card PRIMARY KEY (card_id);
-
-
---
--- Name: pk_champion; Type: CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.champion
-    ADD CONSTRAINT pk_champion PRIMARY KEY (card_id);
-
-
---
--- Name: pk_item; Type: CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.item
-    ADD CONSTRAINT pk_item PRIMARY KEY (card_id);
-
-
---
--- Name: pk_item_has; Type: CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.item_has
-    ADD CONSTRAINT pk_item_has PRIMARY KEY (card_id, stat_name);
-
-
---
--- Name: pk_neutral_monster; Type: CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.neutral_monster
-    ADD CONSTRAINT pk_neutral_monster PRIMARY KEY (card_id);
-
-
---
--- Name: pk_pet; Type: CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.pet
-    ADD CONSTRAINT pk_pet PRIMARY KEY (card_id);
-
-
---
--- Name: pk_summoner_spell; Type: CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.summoner_spell
-    ADD CONSTRAINT pk_summoner_spell PRIMARY KEY (card_id);
-
-
---
--- Name: belongs_to; Type: INDEX; Schema: public; Owner: lol
---
-
-CREATE INDEX belongs_to ON public.pet USING btree (belongs_to);
-
-
---
--- Name: champion_ibfk_1; Type: FK CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.champion
-    ADD CONSTRAINT champion_ibfk_1 FOREIGN KEY (card_id) REFERENCES public.card(card_id);
-
-
---
--- Name: item_has_ibfk_1; Type: FK CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.item_has
-    ADD CONSTRAINT item_has_ibfk_1 FOREIGN KEY (card_id) REFERENCES public.item(card_id);
-
-
---
--- Name: item_ibfk_1; Type: FK CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.item
-    ADD CONSTRAINT item_ibfk_1 FOREIGN KEY (card_id) REFERENCES public.card(card_id);
-
-
---
--- Name: neutral_monster_ibfk_1; Type: FK CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.neutral_monster
-    ADD CONSTRAINT neutral_monster_ibfk_1 FOREIGN KEY (card_id) REFERENCES public.card(card_id);
-
-
---
--- Name: pet_ibfk_1; Type: FK CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.pet
-    ADD CONSTRAINT pet_ibfk_1 FOREIGN KEY (card_id) REFERENCES public.card(card_id);
-
-
---
--- Name: pet_ibfk_2; Type: FK CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.pet
-    ADD CONSTRAINT pet_ibfk_2 FOREIGN KEY (belongs_to) REFERENCES public.champion(card_id);
-
-
---
--- Name: summoner_spell_ibfk_1; Type: FK CONSTRAINT; Schema: public; Owner: lol
---
-
-ALTER TABLE ONLY public.summoner_spell
-    ADD CONSTRAINT summoner_spell_ibfk_1 FOREIGN KEY (card_id) REFERENCES public.card(card_id);
-
-
---
--- Name: SCHEMA public; Type: ACL; Schema: -; Owner: postgres
---
-
-REVOKE ALL ON SCHEMA public FROM PUBLIC;
-REVOKE ALL ON SCHEMA public FROM postgres;
-GRANT ALL ON SCHEMA public TO postgres;
-GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
 --
