@@ -10,8 +10,7 @@ import os
 import ast
 import random
 from app import app, db
-from flask import render_template, request, redirect, url_for, flash, json, jsonify, send_file, send_from_directory, \
-    make_response
+from flask import render_template, request, redirect, url_for, flash, json, jsonify, send_file, send_from_directory, make_response
 from app.models import *
 import xml.etree.ElementTree as xml_tree
 from werkzeug.utils import secure_filename
@@ -26,26 +25,32 @@ def flash_errors(form):
             ))
 
 
+idset = False
+ids = []
+
+
 def get_ids():
-    query = db.session
-    sql = "select card_id from card;"
+    global idset
+    if idset:
+        return ids
+    else:
+        out = []
+        query = db.session
+        sql = "select card_id from card;"
 
-    result = query.execute(sql).fetchall()
-    out = []
-    for r in result:
-        out.append(r[0])
+        result = query.execute(sql).fetchall()
+        for r in result:
+            out.append(r[0])
+        idset = True
+        return out
 
-    return out
-
-
-get_ids()
-global ids
 
 
 def next_id():
+    global ids
     ids = get_ids()
     i = random.randint(1000, 9999)
-    while (i in ids):
+    while i in ids:
         i = random.randint(1000, 9999)
 
     ids.append(i)

@@ -34,7 +34,7 @@
           <entry key="css" value="2735" />
           <entry key="html" value="8825" />
           <entry key="js" value="10010" />
-          <entry key="py" value="17090" />
+          <entry key="py" value="17224" />
           <entry key="sql" value="134" />
           <entry key="txt" value="15" />
         </counts>
@@ -46,7 +46,7 @@
           <entry key="HTML" value="8825" />
           <entry key="JavaScript" value="10010" />
           <entry key="PLAIN_TEXT" value="48" />
-          <entry key="Python" value="17415" />
+          <entry key="Python" value="17549" />
           <entry key="SQL" value="12" />
         </counts>
       </usages-collector>
@@ -109,13 +109,13 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="374">
-                  <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+                <state relative-caret-position="306">
+                  <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
                   <folding>
                     <element signature="e#229#242#0" expanded="true" />
-                    <marker date="1536274629772" expanded="true" signature="1053:1184" ph="..." />
-                    <marker date="1536274629772" expanded="true" signature="1412:1462" ph="..." />
-                    <marker date="1536274629772" expanded="true" signature="3486:4082" ph="..." />
+                    <marker date="1536275207180" expanded="true" signature="1173:1302" ph="..." />
+                    <marker date="1536275207180" expanded="true" signature="1530:1580" ph="..." />
+                    <marker date="1536275207180" expanded="true" signature="3604:4200" ph="..." />
                   </folding>
                 </state>
               </provider>
@@ -705,13 +705,13 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="45" column="19" selection-start-line="45" selection-start-column="19" selection-end-line="45" selection-end-column="19" />
+        <state relative-caret-position="306">
+          <caret line="17" lean-forward="true" selection-start-line="17" selection-end-line="17" />
           <folding>
             <element signature="e#229#242#0" expanded="true" />
-            <marker date="1536274629772" expanded="true" signature="1053:1184" ph="..." />
-            <marker date="1536274629772" expanded="true" signature="1412:1462" ph="..." />
-            <marker date="1536274629772" expanded="true" signature="3486:4082" ph="..." />
+            <marker date="1536275207180" expanded="true" signature="1173:1302" ph="..." />
+            <marker date="1536275207180" expanded="true" signature="1530:1580" ph="..." />
+            <marker date="1536275207180" expanded="true" signature="3604:4200" ph="..." />
           </folding>
         </state>
       </provider>
