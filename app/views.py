@@ -40,10 +40,10 @@ def get_ids():
 
 get_ids()
 global ids
-ids = get_ids()
 
 
 def next_id():
+    ids = get_ids()
     i = random.randint(1000, 9999)
     while (i in ids):
         i = random.randint(1000, 9999)
