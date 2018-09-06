@@ -39,7 +39,7 @@ class Pet(db.Model):
     belongs_to = db.Column(db.Integer, db.ForeignKey('champion.card_id'))
 
 
-class MeutralMonster(db.Model):
+class NeutralMonster(db.Model):
     __tablename__ = 'neutral_monster'
     __table_args__ = {'extend_existing': True}
     card_id = db.Column(db.Integer, db.ForeignKey('card.card_id'), primary_key=True, nullable=False)

@@ -15,6 +15,153 @@ SET client_min_messages = warning;
 SET row_security = off;
 
 --
+-- Name: plpgsql; Type: EXTENSION; Schema: -; Owner: 
+--
+
+CREATE EXTENSION IF NOT EXISTS plpgsql WITH SCHEMA pg_catalog;
+
+
+--
+-- Name: EXTENSION plpgsql; Type: COMMENT; Schema: -; Owner: 
+--
+
+COMMENT ON EXTENSION plpgsql IS 'PL/pgSQL procedural language';
+
+
+SET default_tablespace = '';
+
+SET default_with_oids = false;
+
+--
+-- Name: alembic_version; Type: TABLE; Schema: public; Owner: lol
+--
+
+CREATE TABLE public.alembic_version (
+    version_num character varying(32) NOT NULL
+);
+
+
+--
+-- Name: card; Type: TABLE; Schema: public; Owner: lol
+--
+
+CREATE TABLE public.card (
+    card_id integer NOT NULL,
+    card_name character varying(50),
+    card_text character varying(10000),
+    card_type character varying(50)
+);
+
+
+--
+-- Name: card_card_id_seq; Type: SEQUENCE; Schema: public; Owner: lol
+--
+
+CREATE SEQUENCE public.card_card_id_seq
+    START WITH 1
+    INCREMENT BY 1
+    NO MINVALUE
+    NO MAXVALUE
+    CACHE 1;
+
+
+
+--
+-- Name: card_card_id_seq; Type: SEQUENCE OWNED BY; Schema: public; Owner: lol
+--
+
+
+
+--
+-- Name: champion; Type: TABLE; Schema: public; Owner: lol
+--
+
+CREATE TABLE public.champion (
+    card_id integer NOT NULL,
+    epithet character varying(60),
+    hp integer,
+    ad integer,
+    ap integer,
+    region character varying(12),
+    class1 character varying(12),
+    class2 character varying(12),
+    type1 character varying(12),
+    type2 character varying(12)
+);
+
+
+
+
+--
+-- Name: item; Type: TABLE; Schema: public; Owner: lol
+--
+
+CREATE TABLE public.item (
+    card_id integer NOT NULL,
+    hp integer,
+    ad integer,
+    ap integer
+);
+
+
+
+
+--
+-- Name: item_has; Type: TABLE; Schema: public; Owner: lol
+--
+
+CREATE TABLE public.item_has (
+    card_id integer NOT NULL,
+    stat_name character varying(20) NOT NULL,
+    qty integer
+);
+
+
+
+--
+-- Name: neutral_monster; Type: TABLE; Schema: public; Owner: lol
+--
+
+CREATE TABLE public.neutral_monster (
+    card_id integer NOT NULL,
+    hp integer,
+    ad integer,
+    monster_type character varying(12)
+);
+
+
+
+--
+-- Name: pet; Type: TABLE; Schema: public; Owner: lol
+--
+
+CREATE TABLE public.pet (
+    card_id integer NOT NULL,
+    hp integer,
+    ad integer,
+    belongs_to integer
+);
+
+
+--
+-- Name: summoner_spell; Type: TABLE; Schema: public; Owner: lol
+--
+
+CREATE TABLE public.summoner_spell (
+    card_id integer NOT NULL,
+    spell_type character varying(14)
+);
+
+
+
+--
+-- Name: card_id; Type: DEFAULT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.card ALTER COLUMN card_id SET DEFAULT nextval('public.card_card_id_seq'::regclass);
+
+
+--
 -- Data for Name: alembic_version; Type: TABLE DATA; Schema: public; Owner: lol
 --
 
@@ -928,6 +1075,136 @@ COPY public.summoner_spell (card_id, spell_type) FROM stdin;
 9927	NORMAL
 9933	NORMAL
 \.
+
+
+--
+-- Name: alembic_version_pkc; Type: CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.alembic_version
+    ADD CONSTRAINT alembic_version_pkc PRIMARY KEY (version_num);
+
+
+--
+-- Name: card_pkey; Type: CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.card
+    ADD CONSTRAINT card_pkey PRIMARY KEY (card_id);
+
+
+--
+-- Name: champion_pkey; Type: CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.champion
+    ADD CONSTRAINT champion_pkey PRIMARY KEY (card_id);
+
+
+--
+-- Name: item_has_pkey; Type: CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.item_has
+    ADD CONSTRAINT item_has_pkey PRIMARY KEY (card_id, stat_name);
+
+
+--
+-- Name: item_pkey; Type: CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.item
+    ADD CONSTRAINT item_pkey PRIMARY KEY (card_id);
+
+
+--
+-- Name: neutral_monster_pkey; Type: CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.neutral_monster
+    ADD CONSTRAINT neutral_monster_pkey PRIMARY KEY (card_id);
+
+
+--
+-- Name: pet_pkey; Type: CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.pet
+    ADD CONSTRAINT pet_pkey PRIMARY KEY (card_id);
+
+
+--
+-- Name: summoner_spell_pkey; Type: CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.summoner_spell
+    ADD CONSTRAINT summoner_spell_pkey PRIMARY KEY (card_id);
+
+
+--
+-- Name: champion_card_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.champion
+    ADD CONSTRAINT champion_card_id_fkey FOREIGN KEY (card_id) REFERENCES public.card(card_id);
+
+
+--
+-- Name: item_card_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.item
+    ADD CONSTRAINT item_card_id_fkey FOREIGN KEY (card_id) REFERENCES public.card(card_id);
+
+
+--
+-- Name: item_has_card_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.item_has
+    ADD CONSTRAINT item_has_card_id_fkey FOREIGN KEY (card_id) REFERENCES public.item(card_id);
+
+
+--
+-- Name: neutral_monster_card_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.neutral_monster
+    ADD CONSTRAINT neutral_monster_card_id_fkey FOREIGN KEY (card_id) REFERENCES public.card(card_id);
+
+
+--
+-- Name: pet_belongs_to_fkey; Type: FK CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.pet
+    ADD CONSTRAINT pet_belongs_to_fkey FOREIGN KEY (belongs_to) REFERENCES public.champion(card_id);
+
+
+--
+-- Name: pet_card_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.pet
+    ADD CONSTRAINT pet_card_id_fkey FOREIGN KEY (card_id) REFERENCES public.card(card_id);
+
+
+--
+-- Name: summoner_spell_card_id_fkey; Type: FK CONSTRAINT; Schema: public; Owner: lol
+--
+
+ALTER TABLE ONLY public.summoner_spell
+    ADD CONSTRAINT summoner_spell_card_id_fkey FOREIGN KEY (card_id) REFERENCES public.card(card_id);
+
+
+--
+-- Name: SCHEMA public; Type: ACL; Schema: -; Owner: postgres
+--
+
+REVOKE ALL ON SCHEMA public FROM PUBLIC;
+REVOKE ALL ON SCHEMA public FROM postgres;
+GRANT ALL ON SCHEMA public TO postgres;
+GRANT ALL ON SCHEMA public TO PUBLIC;
 
 
 --

@@ -8,7 +8,7 @@ import base64
 import io
 import os
 import ast
-
+import random
 from app import app, db
 from flask import render_template, request, redirect, url_for, flash, json, jsonify, send_file, send_from_directory, \
     make_response
@@ -26,6 +26,32 @@ def flash_errors(form):
             ))
 
 
+def get_ids():
+    query = db.session
+    sql = "select card_id from card;"
+
+    result = query.execute(sql).fetchall()
+    out = []
+    for r in result:
+        out.append(r[0])
+
+    return out
+
+
+get_ids()
+global ids
+ids = get_ids()
+
+
+def next_id():
+    i = random.randint(1000, 9999)
+    while (i in ids):
+        i = random.randint(1000, 9999)
+
+    ids.append(i)
+    return i
+
+
 ###
 # Routing for your application.
 ###
@@ -41,10 +67,9 @@ def deckbuilder():
     return render_template('deckbuilder.html')
 
 
-@app.route('/search', methods=["GET", "POST"])
+@app.route('/search', methods=["POST"])
 def search():
     if request.method == "POST":
-        """Get data from form"""
 
         data = request.get_json(force=True)
 
@@ -110,7 +135,7 @@ def search():
         result = []
 
         for c in cards:
-            result.append({"id": c["id"], "name": c["name"], "img": c["img"]})
+            result.append({"id": c["id"], "name": c["name"], "img": c["img"], "type": c["cardtype"]})
 
         out = {'error': None, 'data': result, 'message': 'Success'}
 
@@ -374,12 +399,13 @@ def get_card(id):
 
 @app.route('/card/<id>', methods=["GET"])
 def card(id):
-    c = get_card(id)
-    return jsonify(c)
+    return jsonify(get_card(id))
+
 
 @app.route('/card/update', methods=['GET'])
 def update():
     return render_template('update.html')
+
 
 @app.route('/card/<id>/update', methods=["POST"])
 def update_card(id):
@@ -387,12 +413,8 @@ def update_card(id):
 
         file = request.files['file']
         if file is not None:
-            filename = secure_filename(file.filename)
-            path = os.path.join('app/static/cards/', filename)
+            path = os.path.join('app/static/cards/', str(id) + '.jpg')
             file.save(path)
-            os.remove('app/static/cards/'+id+'.jpg')
-            os.rename(path, 'app/static/cards/'+id+'.jpg')
-            os.remove(path)
 
         data = request.form
 
@@ -405,15 +427,15 @@ def update_card(id):
         comma = False
 
         if data['name'] != '':
-            sql += 'card_name = \'' + data['name']+'\''
+            sql += 'card_name = \'' + data['name'] + '\''
             comma = True
 
         if data['text'] != '':
             if comma:
                 sql += ','
-            sql += ' card_text = \'' + data['text'].replace('\\n','\n') + '\''
+            sql += ' card_text = \'' + data['text'].replace('\\n', '\n') + '\''
 
-        sql += ' where card_id = ' + str(id) +';'
+        sql += ' where card_id = ' + str(id) + ';'
 
         ex.execute(sql)
         ex.commit()
@@ -559,9 +581,8 @@ def update_card(id):
             for s in res:
                 stats.append(s[0])
 
-
-            item_stats = ast.literal_eval('[\''+data['stat_name'].replace(',','\',\'')+'\']')
-            qtys = ast.literal_eval('[ \''+data['qty'].replace(',','\',\'')+'\' ]')
+            item_stats = ast.literal_eval('[\'' + data['stat_name'].replace(',', '\',\'') + '\']')
+            qtys = ast.literal_eval('[ \'' + data['qty'].replace(',', '\',\'') + '\' ]')
             for i in range(len(item_stats)):
 
                 if item_stats[i].decode('utf-8') in stats:
@@ -584,7 +605,119 @@ def update_card(id):
                     ex.execute(sql)
                     ex.commit()
 
-    return card(id)
+    return jsonify(get_card(id))
+
+
+@app.route('/card/new', methods=["POST", "GET"])
+def new_card():
+    if request.method == "GET":
+        return render_template('newcard.html')
+
+    if request.method == "POST":
+
+        ex = db.session
+
+        out = {}
+
+        id = next_id()
+        img = url_for('static', filename='cards/' + str(id) + '.jpg')
+
+        file = request.files['file']
+        path = os.path.join('app/static/cards/', str(id) + '.jpg')
+        file.save(path)
+
+        data = request.form
+
+        ctype = data['card_type']
+        name = data['name']
+        text = data['text']
+
+        crd = Card(card_id=id, card_name=name, card_text=text, card_type=ctype)
+        ex.add(crd)
+        ex.commit()
+
+        if ctype == "CHAMPION":
+            epithet = data['epithet']
+            region = data['region']
+            hp = data['hp']
+            ad = data['ad']
+            ap = data['ap']
+            type1 = data['type1']
+            if data['type2'] == '':
+                type2 = 'NULL'
+            else:
+                type2 = data['type2']
+            class1 = data['class1']
+            if data['class2'] == '':
+                class2 = 'NULL'
+            else:
+                class2 = data['class2']
+
+            champ = Champion(card_id=id, epithet=epithet, region=region, hp=hp, ad=ad, ap=ap, type1=type1, type2=type2,
+                             class1=class1, class2=class2)
+            ex.add(champ)
+            ex.commit()
+
+            out = {"id": id, "img": img, "name": name, "text": text, "cardtype": ctype, "epithet": epithet,
+                   "region": region, "class": [class1, class2], "type": [type1, type2], "hp": hp, "ad": ad, "ap": ap}
+
+        if ctype == "PET":
+            hp = data['hp']
+            ad = data['ad']
+            belongs_to = data['belongs_to']
+
+            pet = Pet(card_id=id, hp=hp, ad=ad, belongs_to=belongs_to)
+            ex.add(pet)
+            ex.commit()
+
+            out = {"id": id, "img": img, "name": name, "text": text, "cardtype": ctype, "belongs_to": belongs_to,
+                   "hp": hp, "ad": ad}
+
+        if ctype == "NEUTRALMONSTER":
+            hp = data['hp']
+            ad = data['ad']
+            monster_type = data['monster_type']
+
+            nm = NeutralMonster(card_id=id, hp=hp, ad=ad, monster_type=monster_type)
+            ex.add(nm)
+            ex.commit()
+
+            out = {"id": id, "img": img, "name": name, "text": text, "cardtype": ctype, "type": monster_type, "hp": hp,
+                   "ad": ad}
+
+        if ctype == "SUMMONERSPELL":
+            spell_type = data['spell_type']
+
+            ss = SummonerSpell(card_id=id, spell_type=spell_type)
+            ex.add(ss)
+            ex.commit()
+
+            out = {"id": id, "img": img, "name": name, "text": text, "cardtype": ctype, "type": spell_type}
+
+        if ctype == "ITEM":
+            hp = data['hp']
+            ad = data['ad']
+            ap = data['ap']
+
+            item = Item(card_id=id, hp=hp, ad=ad, ap=ap)
+            ex.add(item)
+            ex.commit()
+
+            item_stats = ast.literal_eval('[\'' + data['stat_name'].replace(',', '\',\'') + '\']')
+            qtys = ast.literal_eval('[ \'' + data['qty'].replace(',', '\',\'') + '\' ]')
+
+            stats = []
+            for i in range(len(item_stats)):
+                s = ItemHas(card_id=id, stat_name=item_stats[i], qty=qtys[i])
+                ex.add(s)
+                ex.commit()
+
+                stats.append({"stat": item_stats[i], "qty": qtys[i]})
+
+            out = {"id": id, "img": img, "name": name, "text": text, "cardtype": ctype, "stats": stats, "hp": hp,
+                   "ad": ad, "ap": ap}
+
+        return jsonify(out)
 
 
 @app.route('/deck/save/<name>', methods=["POST"])

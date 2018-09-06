@@ -3,16 +3,24 @@
 {% block main %}
 
 <div ng-controller="UpdateController" id="update-container">
-    <h1 class="page-header update-page">Update Card</h1>
+    <h1 class="page-header update-page">New Card</h1>
     <form id="update-form" name="load-form" enctype="multipart/form-data" ng-submit="new()" method="post">
-        <label>ID:</label><input type="number" ng-model="data.id" id="id-update" readonly /><br/>
         <label>name:</label><input type="text" ng-model="data.name"/><br/>
         <div>
             <label>image:</label><input type="text" id="img-text" value="Click to browse..."/>
             <input type="file" id="img-update"/><br/>
         </div>
+        <label>card type:</label>
+        <select ng-model="data.card_type">
+            <option value=""></option>
+            <option value="CHAMPION">Champion</option>
+            <option value="PET">Pet</option>
+            <option value="NEUTRALMONSTER">Neutral Monster</option>
+            <option value="SUMMONERSPELL">Summoner Spell</option>
+            <option value="ITEM">Item</option>
+        </select><br/>
         <label id="text-label">text:</label><textarea ng-model="data.text"></textarea><br/>
-       <div ng-if="data.card_type=='CHAMPION'">
+        <div ng-if="data.card_type == 'CHAMPION'">
             <label>region:</label>
             <select ng-model="data.region">
                 <option value=""></option>
@@ -107,21 +115,27 @@
                 <option value="VASTAYA">Vastaya</option>
                 <option value="VOIDBORN">Voidborn</option>
                 <option value="YORDLE">Yordle</option>
-            </select><br/>
-       </div>
+            </select>
+        </div>
         <div ng-if="data.card_type == 'CHAMPION' || data.card_type == 'ITEM' || data.card_type == 'PET' || data.card_type == 'NEUTRALMONSTER'">
             <label>hp:</label><input type="number" ng-model="data.hp" min="0"/>
             <label>ad:</label><input type="number" ng-model="data.ad" min="0"/>
-            <label ng-if="data.card_type == 'CHAMPION' || data.card_type == 'ITEM'">ap:</label><input  ng-if="data.card_type == 'CHAMPION' || data.card_type == 'ITEM'" type="number" ng-model="data.ap" min="0"/><br/>
+            <label ng-if="data.card_type == 'CHAMPION' || data.card_type == 'ITEM'"> ap:</label><input ng-if="data.card_type == 'CHAMPION' || data.card_type == 'ITEM'" type="number" ng-model="data.ap" min="0"/>
         </div>
         <div ng-if="data.card_type == 'SUMMONERSPELL'">
             <label>spell_type:</label>
             <select ng-model="data.spell_type">
-                <option value=""></option>
+               <option value=""></option>
                 <option value="NORMAL">Normal</option>
                 <option value="EQUIPPABLE">Equippable</option>
                 <option value="FIELDOFJUSTICE">Field of Justice</option>
             </select>
+        </div>
+        <div ng-if="data.card_type == 'PET'">
+            <label>belongs_to:</label><input type="text" ng-model="data.belongs_to"/><br/>
+        </div>
+        <div ng-if="data.card_type == 'NEUTRALMONSTER'">
+        <label>monster_type:</label><input type="text" ng-model="data.monster_type"/>
         </div>
         <div ng-if="data.card_type == 'ITEM'">
             <label>stat_name:</label><button ng-click="plusOne()">+</button><button ng-if="data.stat_name.length > 1" ng-click="minusOne()">-</button>
@@ -137,130 +151,12 @@
                     <option value="RESISTANCE">Resistance</option>
                     <option value="LIFESTEAL">Life Steal</option>
                 </select>
-            </div>
-        </div>
-
-        <input type="submit" value="Update"/>
-    </form>
-</div>
-
-<div id="search-container" ng-controller="SearchController">
-    <form>
-        <div id="search-settings">
-            <label>Search</label><input type="text" ng-model="data.keyword"><br/>
-            <label>Card Type</label>
-            <select ng-model="data.card_type">
-                <option value=""></option>
-                <option value="CHAMPION">Champion</option>
-                <option value="PET">Pet</option>
-                <option value="SUMMONERSPELL">Summoner Spell</option>
-                <option value="NEUTRALMONSTER">Neutral Monster</option>
-                <option value="ITEM">Item</option>
-            </select>
-            <button ng-click="search()">Search</button><button ng-click="clear()">Clear</button><br>
-        </div>
-
-        <div id="options" ng-if="data.card_type !== ''">
-            <div ng-if="data.card_type=='CHAMPION'" class="options">
-                <label>Champion Region</label><br/>
-                <select ng-model="data.champ_region">
-                    <option value=""></option>
-                    <option value="DEMACIA">Demacia</option>
-                    <option value="NOXUS">Noxus</option>
-                    <option value="IONIA">Ionia</option>
-                    <option value="SHURIMA">Shurima</option>
-                    <option value="FRELJORD">Freljord</option>
-                    <option value="BILGEWATER">Bilgewater</option>
-                    <option value="SHADOWISLES">Shadow Isles</option>
-                    <option value="BANDLECITY">Bandle City</option>
-                    <option value="MOUNTTARGON">Mount Targon</option>
-                    <option value="PILTOVER">Piltover</option>
-                    <option value="ZAUN">Zaun</option>
-                    <option value="THEVOID">The Void</option>
-                    <option value="RUNETERRA">Runeterra</option>
-                </select><br/>
-
-                <label>Champion Class</label><br/>
-                <select ng-model="data.champ_class">
-                    <option value=""></option>
-                    <option value="MAGE">Mage</option>
-                    <option value="BURST">Burst</option>
-                    <option value="ARTILLERY">Artillery</option>
-                    <option value="BATTLEMAGE">Battlemage</option>
-                    <option value="ENCHANTER">Enchanter</option>
-                    <option value="CATCHER">Catcher</option>
-                    <option value="FIGHTER">Fighter</option>
-                    <option value="JUGGERNAUT">Juggernaut</option>
-                    <option value="DIVER">Diver</option>
-                    <option value="MARKSMAN">Marksman</option>
-                    <option value="SLAYER">Slayer</option>
-                    <option value="ASSASSIN">Assassin</option>
-                    <option value="SKIRMISHER">Skirmisher</option>
-                    <option value="TANK">Tank</option>
-                    <option value="VANGUARD">Vanguard</option>
-                    <option value="WARDEN">Warden</option>
-                </select><br/>
-
-                <label>Champion Type</label><br/>
-                <select ng-model="data.champ_type">
-                    <option value=""></option>
-                    <option value="ASPECT">Aspect</option>
-                    <option value="CELESTIAL">Celestial</option>
-                    <option value="CONSTRUCT">Construct</option>
-                    <option value="CREATURE">Creature</option>
-                    <option value="DARKIN">Darkin</option>
-                    <option value="DEMIGOD">Demigod</option>
-                    <option value="DEMON">Demon</option>
-                    <option value="HUMAN">Human</option>
-                    <option value="ICEBORN">Iceborn</option>
-                    <option value="PLANT">Plant</option>
-                    <option value="SPIRIT">Spirit</option>
-                    <option value="UNDEAD">Undead</option>
-                    <option value="VASTAYA">Vastaya</option>
-                    <option value="VOIDBORN">Voidborn</option>
-                    <option value="YORDLE">Yordle</option>
-                </select><br/><br/>
-            </div>
-
-            <div ng-if="data.card_type==='CHAMPION' || data.card_type==='ITEM'" class="options">
-                <label>HP</label>
-                <input type="number" min="0" max="4" ng-model="data.min_hp"> - <input type="number" min="0" max="20" ng-model="data.max_hp"><br/>
-                <label>AD</label>
-                <input type="number" min="0" max="4" ng-model="data.min_ad"> - <input type="number" min="0" max="4" ng-model="data.max_ad"><br/>
-                <label>AP</label>
-                <input type="number" min="0" max="4" ng-model="data.min_ap"> - <input type="number" min="0" max="4" ng-model="data.max_ap"><br/>
-            </div>
-
-            <div ng-if="data.card_type==='SUMMONERSPELL'" class="options">
-                <label>Spell Type</label><br/>
-                <select ng-model="data.spell_type">
-                    <option> </option>
-                    <option>NORMAL</option>
-                    <option>FIELDOFJUSTICE</option>
-                    <option>EQUIPPABLE</option>
-                </select><br/><br/>
-            </div>
-
-            <div ng-if="data.card_type==='ITEM'" class="options">
-                <label>Item Stats</label><br/>
-                <label>Cooldown Reduction</label><input type="checkbox" ng-model="data.cdr"><br/>
-                <label>Resistance</label><input type="checkbox" ng-model="data.res"><br/>
-                <label>Attack Speed</label><input type="checkbox" ng-model="data.ats"><br/>
-                <label>Critical Strike Chance</label><input type="checkbox" ng-model="data.crit"><br/>
-                <label>Life Steal</label><input type="checkbox" ng-model="data.ls"><br/>
-                <label>Penetration</label><input type="checkbox" ng-model="data.pen"><br/>
-                <label>Heal & Shield Power</label><input type="checkbox" ng-model="data.hsp"><br/>
             </div><br/>
         </div>
+
+        <input type="submit" value="Add Card"/>
     </form>
-
-    <div id="results-container">
-        <div ng-repeat="card in cards track by $index" ng-mouseover="hoverIn($index)" ng-click="addCard()" class="results">
-            <img ng-src="<< card.img >>" id="<< card.id >>" class="card">
-        </div>
-    </div>
 </div>
-
 <div id="preview-container" ng-controller="PreviewController">
     <div ng-if="card != null">
         <img ng-src="<< card.img >>" class="preview card">
