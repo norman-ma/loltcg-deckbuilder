@@ -32,7 +32,7 @@ app.controller("PreviewController",['$scope','$http','$rootScope',function($scop
                 .then(function(res){
                     if(res.data.error == null){
                         $scope.card = res.data;
-                        $scope.card.img = $rootScope.active.img;
+                        //$scope.card.img = $rootScope.active.img;
                         //console.log($scope.card);
                     }
                 });

@@ -734,7 +734,7 @@ def saveDeck(name):
         file = open('app/static/deck/' + name + '.dek', 'w')
         text = "<deck version=\"0.1\">\n\t<meta>\n\t\t<game>loltcg</game>\n\t</meta>\n\t<superzone name=\"Deck\">\n"
         for c in data['cards']:
-            text += "\t\t<card><name id=\"" + str(c['id']) + "\">" + c['name'] + "</name><set>Alpha</set></card>\n"
+            text += "\t\t<card><name id=\"" + str(c['id']) + "\" type=\"" + c['type'] + "\">" + c['name'] + "</name><set>Alpha</set></card>\n"
 
         text += "\t</superzone>\n</deck>"
 
@@ -760,9 +760,10 @@ def loadDeck():
         cards = []
         for card in szone:
             id = int(card[0].attrib['id'])
+            ctype = card[0].attrib['type']
             name = card[0].text
             img = url_for('static', filename='cards/' + str(id) + '.jpg')
-            cards.append({'id': id, 'img': img, 'name': name})
+            cards.append({'id': id, 'img': img, 'name': name, 'type': ctype})
 
         out = {'error': None, 'data': cards, 'message': 'Success'}
 
