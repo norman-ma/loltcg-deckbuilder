@@ -182,6 +182,7 @@ app.controller("DeckController",["$scope","$http","$rootScope",function($scope,$
     $scope.load = function(){
         var fd = new FormData();
         fd.append('file', $("#deck-file")[0].files[0]);
+        fd.append('verbose','false');
 
         /*for (var key of fd.entries()){
             console.log(key[0] + ', ' + key[1]);

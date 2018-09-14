@@ -757,15 +757,22 @@ def load_deck():
 
         text = open(path).read()
 
+        data = request.form
+
         root = xml_tree.fromstring(text)
         szone = root[1]
         cards = []
         for card in szone:
             id = int(card[0].attrib['id'])
-            ctype = card[0].attrib['type']
-            name = card[0].text
-            img = url_for('static', filename='cards/' + str(id) + '.jpg')
-            cards.append({'id': id, 'img': img, 'name': name, 'type': ctype})
+
+            if data["verbose"] == 'true':
+                cards.append(get_card(id))
+
+            else:
+                ctype = card[0].attrib['type']
+                name = card[0].text
+                img = url_for('static', filename='cards/' + str(id) + '.jpg')
+                cards.append({'id': id, 'img': img, 'name': name, 'type': ctype})
 
         out = {'error': None, 'data': cards, 'message': 'Success'}
 
