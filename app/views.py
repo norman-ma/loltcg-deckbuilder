@@ -14,6 +14,7 @@ from flask import render_template, request, redirect, url_for, flash, json, json
 from app.models import *
 import xml.etree.ElementTree as xml_tree
 from werkzeug.utils import secure_filename
+from flask_cors import cross_origin
 
 
 def flash_errors(form):
@@ -726,7 +727,7 @@ def new_card():
 
 
 @app.route('/deck/save/<name>', methods=["POST"])
-def saveDeck(name):
+def save_deck(name):
     if request.method == "POST":
 
         data = request.get_json(force=True)
@@ -745,7 +746,8 @@ def saveDeck(name):
 
 
 @app.route('/deck/load', methods=['POST'])
-def loadDeck():
+@cross_origin()
+def load_deck():
     if request.method == "POST":
 
         file = request.files['file']
@@ -768,6 +770,7 @@ def loadDeck():
         out = {'error': None, 'data': cards, 'message': 'Success'}
 
         return jsonify(out)
+
 
 
 ###

@@ -3,65 +3,65 @@
 		<game>loltcg</game>
 	</meta>
 	<superzone name="Deck">
-		<card><name id="5611">Sivir</name><set>Alpha</set></card>
-		<card><name id="5611">Sivir</name><set>Alpha</set></card>
-		<card><name id="5611">Sivir</name><set>Alpha</set></card>
-		<card><name id="1059">Taliyah</name><set>Alpha</set></card>
-		<card><name id="1059">Taliyah</name><set>Alpha</set></card>
-		<card><name id="1059">Taliyah</name><set>Alpha</set></card>
-		<card><name id="4462">Nasus</name><set>Alpha</set></card>
-		<card><name id="4462">Nasus</name><set>Alpha</set></card>
-		<card><name id="4462">Nasus</name><set>Alpha</set></card>
-		<card><name id="5201">Renekton</name><set>Alpha</set></card>
-		<card><name id="5201">Renekton</name><set>Alpha</set></card>
-		<card><name id="5201">Renekton</name><set>Alpha</set></card>
-		<card><name id="9563">Rammus</name><set>Alpha</set></card>
-		<card><name id="9563">Rammus</name><set>Alpha</set></card>
-		<card><name id="898">Tahm Kench</name><set>Alpha</set></card>
-		<card><name id="898">Tahm Kench</name><set>Alpha</set></card>
-		<card><name id="898">Tahm Kench</name><set>Alpha</set></card>
-		<card><name id="5911">The Rite of Ascension</name><set>Alpha</set></card>
-		<card><name id="5911">The Rite of Ascension</name><set>Alpha</set></card>
-		<card><name id="5911">The Rite of Ascension</name><set>Alpha</set></card>
-		<card><name id="5304">The Rite, Corrupted</name><set>Alpha</set></card>
-		<card><name id="5304">The Rite, Corrupted</name><set>Alpha</set></card>
-		<card><name id="5304">The Rite, Corrupted</name><set>Alpha</set></card>
-		<card><name id="7317">The Risen Kingdom</name><set>Alpha</set></card>
-		<card><name id="7317">The Risen Kingdom</name><set>Alpha</set></card>
-		<card><name id="7317">The Risen Kingdom</name><set>Alpha</set></card>
-		<card><name id="4612">The Ancient Kingdom</name><set>Alpha</set></card>
-		<card><name id="4612">The Ancient Kingdom</name><set>Alpha</set></card>
-		<card><name id="4612">The Ancient Kingdom</name><set>Alpha</set></card>
-		<card><name id="4903">The Risen Warriors</name><set>Alpha</set></card>
-		<card><name id="1616">Return to The Capital</name><set>Alpha</set></card>
-		<card><name id="1616">Return to The Capital</name><set>Alpha</set></card>
-		<card><name id="4003">The Sun Disc Medallion</name><set>Alpha</set></card>
-		<card><name id="4003">The Sun Disc Medallion</name><set>Alpha</set></card>
-		<card><name id="8433">Journey to the Capital</name><set>Alpha</set></card>
-		<card><name id="8433">Journey to the Capital</name><set>Alpha</set></card>
-		<card><name id="8433">Journey to the Capital</name><set>Alpha</set></card>
-		<card><name id="3712">Hunter&apos;s Instinct</name><set>Alpha</set></card>
-		<card><name id="3712">Hunter&apos;s Instinct</name><set>Alpha</set></card>
-		<card><name id="3712">Hunter&apos;s Instinct</name><set>Alpha</set></card>
-		<card><name id="5553">Ryze</name><set>Alpha</set></card>
-		<card><name id="4099">Trinity Force</name><set>Alpha</set></card>
-		<card><name id="4099">Trinity Force</name><set>Alpha</set></card>
-		<card><name id="5680">Teleport</name><set>Alpha</set></card>
-		<card><name id="5680">Teleport</name><set>Alpha</set></card>
-		<card><name id="5680">Teleport</name><set>Alpha</set></card>
-		<card><name id="8976">Recall</name><set>Alpha</set></card>
-		<card><name id="8976">Recall</name><set>Alpha</set></card>
-		<card><name id="8976">Recall</name><set>Alpha</set></card>
-		<card><name id="423">Thornmail</name><set>Alpha</set></card>
-		<card><name id="3221">Azir</name><set>Alpha</set></card>
-		<card><name id="3221">Azir</name><set>Alpha</set></card>
-		<card><name id="3221">Azir</name><set>Alpha</set></card>
-		<card><name id="1244">Nashor&apos;s Tooth</name><set>Alpha</set></card>
-		<card><name id="1244">Nashor&apos;s Tooth</name><set>Alpha</set></card>
-		<card><name id="2643">Item Shop</name><set>Alpha</set></card>
-		<card><name id="2643">Item Shop</name><set>Alpha</set></card>
-		<card><name id="2643">Item Shop</name><set>Alpha</set></card>
-		<card><name id="4210">Challenging Smite</name><set>Alpha</set></card>
-		<card><name id="4210">Challenging Smite</name><set>Alpha</set></card>
+		<card><name id="5611" type="CHAMPION">Sivir</name><set>Alpha</set></card>
+		<card><name id="5611" type="CHAMPION">Sivir</name><set>Alpha</set></card>
+		<card><name id="5611" type="CHAMPION">Sivir</name><set>Alpha</set></card>
+		<card><name id="1059" type="CHAMPION">Taliyah</name><set>Alpha</set></card>
+		<card><name id="1059" type="CHAMPION">Taliyah</name><set>Alpha</set></card>
+		<card><name id="1059" type="CHAMPION">Taliyah</name><set>Alpha</set></card>
+		<card><name id="4462" type="CHAMPION">Nasus</name><set>Alpha</set></card>
+		<card><name id="4462" type="CHAMPION">Nasus</name><set>Alpha</set></card>
+		<card><name id="4462" type="CHAMPION">Nasus</name><set>Alpha</set></card>
+		<card><name id="5201" type="CHAMPION">Renekton</name><set>Alpha</set></card>
+		<card><name id="5201" type="CHAMPION">Renekton</name><set>Alpha</set></card>
+		<card><name id="5201" type="CHAMPION">Renekton</name><set>Alpha</set></card>
+		<card><name id="9563" type="CHAMPION">Rammus</name><set>Alpha</set></card>
+		<card><name id="9563" type="CHAMPION">Rammus</name><set>Alpha</set></card>
+		<card><name id="898" type="CHAMPION">Tahm Kench</name><set>Alpha</set></card>
+		<card><name id="898" type="CHAMPION">Tahm Kench</name><set>Alpha</set></card>
+		<card><name id="898" type="CHAMPION">Tahm Kench</name><set>Alpha</set></card>
+		<card><name id="5911" type="SUMMONERSPELL">The Rite of Ascension</name><set>Alpha</set></card>
+		<card><name id="5911" type="SUMMONERSPELL">The Rite of Ascension</name><set>Alpha</set></card>
+		<card><name id="5911" type="SUMMONERSPELL">The Rite of Ascension</name><set>Alpha</set></card>
+		<card><name id="5304" type="SUMMONERSPELL">The Rite, Corrupted</name><set>Alpha</set></card>
+		<card><name id="5304" type="SUMMONERSPELL">The Rite, Corrupted</name><set>Alpha</set></card>
+		<card><name id="5304" type="SUMMONERSPELL">The Rite, Corrupted</name><set>Alpha</set></card>
+		<card><name id="7317" type="SUMMONERSPELL">The Risen Kingdom</name><set>Alpha</set></card>
+		<card><name id="7317" type="SUMMONERSPELL">The Risen Kingdom</name><set>Alpha</set></card>
+		<card><name id="7317" type="SUMMONERSPELL">The Risen Kingdom</name><set>Alpha</set></card>
+		<card><name id="4612" type="SUMMONERSPELL">The Ancient Kingdom</name><set>Alpha</set></card>
+		<card><name id="4612" type="SUMMONERSPELL">The Ancient Kingdom</name><set>Alpha</set></card>
+		<card><name id="4612" type="SUMMONERSPELL">The Ancient Kingdom</name><set>Alpha</set></card>
+		<card><name id="4903" type="SUMMONERSPELL">The Risen Warriors</name><set>Alpha</set></card>
+		<card><name id="1616" type="SUMMONERSPELL">Return to The Capital</name><set>Alpha</set></card>
+		<card><name id="1616" type="SUMMONERSPELL">Return to The Capital</name><set>Alpha</set></card>
+		<card><name id="4003" type="SUMMONERSPELL">The Sun Disc Medallion</name><set>Alpha</set></card>
+		<card><name id="4003" type="SUMMONERSPELL">The Sun Disc Medallion</name><set>Alpha</set></card>
+		<card><name id="8433" type="SUMMONERSPELL">Journey to the Capital</name><set>Alpha</set></card>
+		<card><name id="8433" type="SUMMONERSPELL">Journey to the Capital</name><set>Alpha</set></card>
+		<card><name id="8433" type="SUMMONERSPELL">Journey to the Capital</name><set>Alpha</set></card>
+		<card><name id="3712" type="SUMMONERSPELL">Hunter&apos;s Instinct</name><set>Alpha</set></card>
+		<card><name id="3712" type="SUMMONERSPELL">Hunter&apos;s Instinct</name><set>Alpha</set></card>
+		<card><name id="3712" type="SUMMONERSPELL">Hunter&apos;s Instinct</name><set>Alpha</set></card>
+		<card><name id="5553" type="CHAMPION">Ryze</name><set>Alpha</set></card>
+		<card><name id="4099" type="ITEM">Trinity Force</name><set>Alpha</set></card>
+		<card><name id="4099" type="ITEM">Trinity Force</name><set>Alpha</set></card>
+		<card><name id="5680" type="SUMMONERSPELL">Teleport</name><set>Alpha</set></card>
+		<card><name id="5680" type="SUMMONERSPELL">Teleport</name><set>Alpha</set></card>
+		<card><name id="5680" type="SUMMONERSPELL">Teleport</name><set>Alpha</set></card>
+		<card><name id="8976" type="SUMMONERSPELL">Recall</name><set>Alpha</set></card>
+		<card><name id="8976" type="SUMMONERSPELL">Recall</name><set>Alpha</set></card>
+		<card><name id="8976" type="SUMMONERSPELL">Recall</name><set>Alpha</set></card>
+		<card><name id="423" type="ITEM">Thornmail</name><set>Alpha</set></card>
+		<card><name id="3221" type="CHAMPION">Azir</name><set>Alpha</set></card>
+		<card><name id="3221" type="CHAMPION">Azir</name><set>Alpha</set></card>
+		<card><name id="3221" type="CHAMPION">Azir</name><set>Alpha</set></card>
+		<card><name id="1244" type="ITEM">Nashor&apos;s Tooth</name><set>Alpha</set></card>
+		<card><name id="1244" type="ITEM">Nashor&apos;s Tooth</name><set>Alpha</set></card>
+		<card><name id="2643" type="SUMMONERSPELL">Item Shop</name><set>Alpha</set></card>
+		<card><name id="2643" type="SUMMONERSPELL">Item Shop</name><set>Alpha</set></card>
+		<card><name id="2643" type="SUMMONERSPELL">Item Shop</name><set>Alpha</set></card>
+		<card><name id="4210" type="SUMMONERSPELL">Challenging Smite</name><set>Alpha</set></card>
+		<card><name id="4210" type="SUMMONERSPELL">Challenging Smite</name><set>Alpha</set></card>
 	</superzone>
 </deck>

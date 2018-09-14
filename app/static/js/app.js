@@ -80,7 +80,7 @@ app.controller("SearchController",['$scope','$http','$rootScope',function($scope
                 if(res.data.error == null){
                      $scope.cards = res.data.data;
                      //console.log($scope.cards);
-                     searchScroll.update;
+                     searchScroll.update();
                 }
             });
         };
