@@ -158,9 +158,8 @@ app.controller("DeckController",["$scope","$http","$rootScope",function($scope,$
     };
 
     $scope.sort = function(){
-        console.log($scope.deck.cards);
         $scope.deck.cards = qsort($scope.deck.cards);
-        console.log($scope.deck.cards);
+        distribute();
     };
 
     var distribute = function(){

@@ -41,7 +41,7 @@
           <entry key="Python Console" value="896" />
           <entry key="css" value="2736" />
           <entry key="html" value="9046" />
-          <entry key="js" value="11237" />
+          <entry key="js" value="11252" />
           <entry key="py" value="29884" />
           <entry key="sql" value="135" />
           <entry key="txt" value="15" />
@@ -52,7 +52,7 @@
           <entry key="CSS" value="2736" />
           <entry key="DBN-SQL" value="123" />
           <entry key="HTML" value="9046" />
-          <entry key="JavaScript" value="11237" />
+          <entry key="JavaScript" value="11252" />
           <entry key="PLAIN_TEXT" value="48" />
           <entry key="Python" value="30780" />
           <entry key="SQL" value="12" />
@@ -148,8 +148,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="162" column="39" selection-start-line="162" selection-start-column="39" selection-end-line="162" selection-end-column="39" />
+            <state relative-caret-position="85">
+              <caret line="161" column="21" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
             </state>
           </provider>
         </entry>
@@ -739,8 +739,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="162" column="39" selection-start-line="162" selection-start-column="39" selection-end-line="162" selection-end-column="39" />
+        <state relative-caret-position="85">
+          <caret line="161" column="21" selection-start-line="161" selection-start-column="21" selection-end-line="161" selection-end-column="21" />
         </state>
       </provider>
     </entry>
