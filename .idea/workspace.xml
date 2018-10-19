@@ -3,7 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="8766e8ab-c010-443c-973f-e9db52648ef7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/home.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/templates/deckbuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/deckbuilder.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,9 +19,9 @@
     <session id="1409291328">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="21" />
+          <entry key="project.closed" value="22" />
           <entry key="project.open.time.0" value="1" />
-          <entry key="project.open.time.1" value="2" />
+          <entry key="project.open.time.1" value="3" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.15" value="1" />
@@ -33,7 +34,7 @@
           <entry key="project.open.time.7" value="2" />
           <entry key="project.open.time.8" value="1" />
           <entry key="project.open.time.9" value="2" />
-          <entry key="project.opened" value="36" />
+          <entry key="project.opened" value="37" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
@@ -41,8 +42,8 @@
           <entry key="Procfile" value="33" />
           <entry key="Python Console" value="896" />
           <entry key="css" value="2736" />
-          <entry key="html" value="9011" />
-          <entry key="js" value="10564" />
+          <entry key="html" value="9043" />
+          <entry key="js" value="11187" />
           <entry key="py" value="29884" />
           <entry key="sql" value="135" />
           <entry key="txt" value="15" />
@@ -52,8 +53,8 @@
         <counts>
           <entry key="CSS" value="2736" />
           <entry key="DBN-SQL" value="123" />
-          <entry key="HTML" value="9011" />
-          <entry key="JavaScript" value="10564" />
+          <entry key="HTML" value="9043" />
+          <entry key="JavaScript" value="11187" />
           <entry key="PLAIN_TEXT" value="48" />
           <entry key="Python" value="30780" />
           <entry key="SQL" value="12" />
@@ -65,13 +66,13 @@
           <entry key="README" value="2" />
           <entry key="css" value="8" />
           <entry key="dek" value="5" />
-          <entry key="html" value="26" />
+          <entry key="html" value="27" />
           <entry key="ini" value="3" />
           <entry key="jpg" value="14" />
-          <entry key="js" value="16" />
+          <entry key="js" value="17" />
           <entry key="mako" value="2" />
           <entry key="md" value="1" />
-          <entry key="py" value="36" />
+          <entry key="py" value="37" />
           <entry key="sql" value="3" />
           <entry key="txt" value="4" />
         </counts>
@@ -80,12 +81,12 @@
         <counts>
           <entry key="CSS" value="8" />
           <entry key="DBN-SQL" value="2" />
-          <entry key="HTML" value="26" />
+          <entry key="HTML" value="27" />
           <entry key="Image" value="14" />
-          <entry key="JavaScript" value="16" />
+          <entry key="JavaScript" value="17" />
           <entry key="Markdown" value="1" />
           <entry key="PLAIN_TEXT" value="13" />
-          <entry key="Python" value="36" />
+          <entry key="Python" value="37" />
           <entry key="SQL" value="1" />
           <entry key="XML" value="5" />
         </counts>
@@ -95,20 +96,9 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/static/js/bootstrap.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
+            <state relative-caret-position="573">
               <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
             </state>
           </provider>
@@ -117,8 +107,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/__init__.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+            <state relative-caret-position="476">
+              <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
               <folding>
                 <element signature="e#0#9#0" expanded="true" />
               </folding>
@@ -130,30 +120,47 @@
         <entry file="file://$PROJECT_DIR$/app/static/css/app.css">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="208">
-              <caret line="100" column="29" lean-forward="true" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+              <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/templates/deckbuilder.html">
+        <entry file="file://$PROJECT_DIR$/app/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2426">
-              <caret line="156" column="159" lean-forward="true" selection-start-line="156" selection-start-column="146" selection-end-line="156" selection-end-column="159" />
+            <state relative-caret-position="1083">
+              <caret line="603" column="35" lean-forward="true" selection-start-line="603" selection-start-column="35" selection-end-line="603" selection-end-column="35" />
+              <folding>
+                <element signature="e#229#242#0" expanded="true" />
+                <marker date="1536950711519" expanded="true" signature="22248:22252" ph="..." />
+              </folding>
             </state>
           </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/app/static/css/home.css">
-          <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/app/templates/deckbuilder.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="161" column="51" lean-forward="true" selection-start-line="161" selection-start-column="51" selection-end-line="161" selection-end-column="51" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="459">
+              <caret line="156" column="38" lean-forward="true" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/home.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="68">
-              <caret line="4" column="114" selection-start-line="4" selection-start-column="114" selection-end-line="4" selection-end-column="114" />
+            <state relative-caret-position="102">
+              <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
             </state>
           </provider>
         </entry>
@@ -223,6 +230,9 @@
       <find>pr</find>
       <find>flex</find>
       <find>select</find>
+      <find>type</find>
+      <find>active</find>
+      <find>toAdd</find>
     </findStrings>
     <replaceStrings>
       <replace>ilike</replace>
@@ -251,7 +261,6 @@
         <option value="$PROJECT_DIR$/app/templates/base.html" />
         <option value="$PROJECT_DIR$/flaskmigrate.py" />
         <option value="$PROJECT_DIR$/Procfile" />
-        <option value="$PROJECT_DIR$/app/templates/deckbuilder.html" />
         <option value="$PROJECT_DIR$/migrations/versions/5bc74059d200_.py" />
         <option value="$PROJECT_DIR$/migrations/versions/77d0a533a433_.py" />
         <option value="$PROJECT_DIR$/app/models.py" />
@@ -270,10 +279,11 @@
         <option value="$PROJECT_DIR$/../loltcggame/server.js" />
         <option value="$PROJECT_DIR$/../loltcggame/app/templates/index.html" />
         <option value="$PROJECT_DIR$/app/views.py" />
-        <option value="$PROJECT_DIR$/app/static/js/app.js" />
         <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app/static/css/app.css" />
         <option value="$PROJECT_DIR$/app/templates/home.html" />
+        <option value="$PROJECT_DIR$/app/static/js/app.js" />
+        <option value="$PROJECT_DIR$/app/templates/deckbuilder.html" />
       </list>
     </option>
   </component>
@@ -300,7 +310,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -343,6 +352,7 @@
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -455,7 +465,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49690402" visible="true" weight="0.16364606" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49690402" visible="true" weight="0.1652452" />
       <window_info id="Structure" order="1" sideWeight="0.503096" side_tool="true" weight="0.09701493" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
@@ -467,7 +477,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32939914" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" visible="true" weight="0.2972103" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" visible="true" weight="0.2972103" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.30686694" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.21244635" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
@@ -476,7 +486,7 @@
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="SciView" order="3" />
+      <window_info anchor="right" id="SciView" order="3" weight="0.32995737" />
       <window_info anchor="right" id="Database" order="4" />
     </layout>
     <layout-to-restore>
@@ -646,24 +656,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="12869">
-          <caret line="767" column="41" selection-start-line="767" selection-start-column="41" selection-end-line="767" selection-end-column="41" />
-          <folding>
-            <element signature="e#229#242#0" expanded="true" />
-            <marker date="1536950711519" expanded="true" signature="22248:22252" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="28" column="38" selection-start-line="28" selection-start-column="8" selection-end-line="28" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -673,22 +665,8 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="28" column="21" lean-forward="true" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
-          <folding>
-            <element signature="e#0#9#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/app/static/css/home.css">
+      <provider selected="true" editor-type-id="text-editor" />
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/newcard.html">
       <provider selected="true" editor-type-id="text-editor">
@@ -711,27 +689,59 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/templates/home.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="102">
+          <caret line="6" column="14" lean-forward="true" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="41" column="7" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="28" column="21" selection-start-line="28" selection-start-column="21" selection-end-line="28" selection-end-column="21" />
+          <folding>
+            <element signature="e#0#9#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/css/app.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="208">
-          <caret line="100" column="29" lean-forward="true" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+          <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1083">
+          <caret line="603" column="35" lean-forward="true" selection-start-line="603" selection-start-column="35" selection-end-line="603" selection-end-column="35" />
+          <folding>
+            <element signature="e#229#242#0" expanded="true" />
+            <marker date="1536950711519" expanded="true" signature="22248:22252" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="459">
+          <caret line="156" column="38" lean-forward="true" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/deckbuilder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2426">
-          <caret line="156" column="159" lean-forward="true" selection-start-line="156" selection-start-column="146" selection-end-line="156" selection-end-column="159" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/css/home.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/home.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="114" selection-start-line="4" selection-start-column="114" selection-end-line="4" selection-end-column="114" />
+        <state relative-caret-position="345">
+          <caret line="161" column="51" lean-forward="true" selection-start-line="161" selection-start-column="51" selection-end-line="161" selection-end-column="51" />
         </state>
       </provider>
     </entry>

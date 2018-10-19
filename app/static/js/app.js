@@ -88,16 +88,16 @@ app.controller("SearchController",['$scope','$http','$rootScope',function($scope
     $scope.clear = function(){
         $scope.cards = [];
         $rootScope.active = null;
-    }
+    };
 
     $scope.hoverIn = function(id){
         $rootScope.active = $scope.cards[id];
         //console.log($rootScope.active);
-    }
+    };
 
     $scope.addCard = function(){
         $rootScope.toAdd = $rootScope.active;
-    }
+    };
 
 }]);
 
@@ -113,14 +113,60 @@ app.controller("DeckController",["$scope","$http","$rootScope",function($scope,$
     $scope.hover = function(id){
         $rootScope.active = $scope.deck.cards[id];
         //console.log($rootScope.active);
-    }
+    };
+
+    var comparison = function(card){
+        let type;
+        switch(card.card_type){
+            case('CHAMPION'):
+                type = 'a';
+                break;
+            case('PET'):
+                type = 'a';
+                break;
+            case('SUMMONERSPELL'):
+                type = 'b';
+                break;
+            case('ITEM'):
+                type = 'c';
+                break;
+        }
+
+        return type+card.name;
+
+    };
+
+    var qsort = function(arr){
+
+        if (arr.length < 2) return arr;
+
+        const pivot = arr[Math.floor(Math.random() * arr.length)];
+
+        let left = [];
+        let equal = [];
+        let right = [];
+
+        for (let element of arr) {
+            if (comparison(element) > comparison(pivot)) right.push(element);
+            else if (comparison(element) < comparison(pivot)) left.push(element);
+            else equal.push(element);
+        }
+
+        return qsort(left)
+                .concat(equal)
+                .concat(qsort(right));
+    };
+
+    $scope.sort = function(){
+        $scope.deck.cards = qsort($scope.deck.cards);
+    };
 
     var distribute = function(){
         $scope.rows = [];
         var n = Math.floor($scope.deck.cards.length/15) + 1;
         var i;
         for(i = 0; i < n; i++){
-            var row = []
+            var row = [];
             var u;
             for(u = 0; u < 15; u++){
                 if($scope.deck.cards[i*15+u] != null){
@@ -157,18 +203,18 @@ app.controller("DeckController",["$scope","$http","$rootScope",function($scope,$
         });
         //console.log(i);
         return i;
-    }
+    };
 
     $scope.removeCard = function(index){
         $scope.deck.cards.splice(index,1);
         distribute();
         //console.log('deck:',$scope.deck.cards);
-    }
+    };
 
     $scope.clear = function(){
         $scope.deck.cards = [];
         distribute();
-    }
+    };
 
     $scope.save = function(){
         return $http
@@ -177,7 +223,7 @@ app.controller("DeckController",["$scope","$http","$rootScope",function($scope,$
                 $scope.url = res.data;
                 //console.log($scope.url);
             })
-    }
+    };
 
     $scope.load = function(){
         var fd = new FormData();
@@ -240,8 +286,8 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
 
     $rootScope.$watch('toAdd',function(){
         if($rootScope.toAdd !== null){
-            $scope.data.id = $rootScope.toAdd.id
-            $scope.data.card_type = $rootScope.toAdd.type
+            $scope.data.id = $rootScope.toAdd.id;
+            $scope.data.card_type = $rootScope.toAdd.type;
         }
     });
 
