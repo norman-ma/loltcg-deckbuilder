@@ -122,13 +122,13 @@ app.controller("DeckController",["$scope","$http","$rootScope",function($scope,$
                 type = 'a';
                 break;
             case('PET'):
-                type = 'a';
-                break;
-            case('SUMMONERSPELL'):
                 type = 'b';
                 break;
-            case('ITEM'):
+            case('SUMMONERSPELL'):
                 type = 'c';
+                break;
+            case('ITEM'):
+                type = 'd';
                 break;
         }
 
@@ -159,6 +159,7 @@ app.controller("DeckController",["$scope","$http","$rootScope",function($scope,$
 
     $scope.sort = function(){
         $scope.deck.cards = qsort($scope.deck.cards);
+        $scope.$apply();
     };
 
     var distribute = function(){
