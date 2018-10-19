@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8766e8ab-c010-443c-973f-e9db52648ef7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/deckbuilder.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/deckbuilder.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +40,7 @@
           <entry key="Procfile" value="33" />
           <entry key="Python Console" value="896" />
           <entry key="css" value="2736" />
-          <entry key="html" value="9043" />
+          <entry key="html" value="9046" />
           <entry key="js" value="11187" />
           <entry key="py" value="29884" />
           <entry key="sql" value="135" />
@@ -53,7 +51,7 @@
         <counts>
           <entry key="CSS" value="2736" />
           <entry key="DBN-SQL" value="123" />
-          <entry key="HTML" value="9043" />
+          <entry key="HTML" value="9046" />
           <entry key="JavaScript" value="11187" />
           <entry key="PLAIN_TEXT" value="48" />
           <entry key="Python" value="30780" />
@@ -138,20 +136,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/templates/deckbuilder.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="345">
+            <state relative-caret-position="406">
               <caret line="161" column="51" lean-forward="true" selection-start-line="161" selection-start-column="51" selection-end-line="161" selection-end-column="51" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="156" column="38" lean-forward="true" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
+            <state relative-caret-position="136">
+              <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
             </state>
           </provider>
         </entry>
@@ -233,6 +231,7 @@
       <find>type</find>
       <find>active</find>
       <find>toAdd</find>
+      <find>Save</find>
     </findStrings>
     <replaceStrings>
       <replace>ilike</replace>
@@ -282,8 +281,8 @@
         <option value="$PROJECT_DIR$/app/__init__.py" />
         <option value="$PROJECT_DIR$/app/static/css/app.css" />
         <option value="$PROJECT_DIR$/app/templates/home.html" />
-        <option value="$PROJECT_DIR$/app/static/js/app.js" />
         <option value="$PROJECT_DIR$/app/templates/deckbuilder.html" />
+        <option value="$PROJECT_DIR$/app/static/js/app.js" />
       </list>
     </option>
   </component>
@@ -465,7 +464,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49690402" visible="true" weight="0.1652452" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49690402" visible="true" weight="0.1652452" />
       <window_info id="Structure" order="1" sideWeight="0.503096" side_tool="true" weight="0.09701493" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
@@ -477,7 +476,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" visible="true" weight="0.2972103" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" visible="true" weight="0.2972103" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.30686694" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.21244635" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
@@ -731,17 +730,17 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
+    <entry file="file://$PROJECT_DIR$/app/templates/deckbuilder.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="156" column="38" lean-forward="true" selection-start-line="156" selection-start-column="38" selection-end-line="156" selection-end-column="38" />
+        <state relative-caret-position="406">
+          <caret line="161" column="51" lean-forward="true" selection-start-line="161" selection-start-column="51" selection-end-line="161" selection-end-column="51" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/templates/deckbuilder.html">
+    <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="161" column="51" lean-forward="true" selection-start-line="161" selection-start-column="51" selection-end-line="161" selection-end-column="51" />
+        <state relative-caret-position="136">
+          <caret line="119" column="20" selection-start-line="119" selection-start-column="20" selection-end-line="119" selection-end-column="20" />
         </state>
       </provider>
     </entry>

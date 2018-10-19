@@ -117,7 +117,7 @@ app.controller("DeckController",["$scope","$http","$rootScope",function($scope,$
 
     var comparison = function(card){
         let type;
-        switch(card.card_type){
+        switch(card.type){
             case('CHAMPION'):
                 type = 'a';
                 break;
