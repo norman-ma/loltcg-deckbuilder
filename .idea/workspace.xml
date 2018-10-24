@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8766e8ab-c010-443c-973f-e9db52648ef7" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/update.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +41,7 @@
           <entry key="Python Console" value="896" />
           <entry key="css" value="2736" />
           <entry key="html" value="9065" />
-          <entry key="js" value="12007" />
+          <entry key="js" value="12027" />
           <entry key="py" value="29884" />
           <entry key="sql" value="135" />
           <entry key="txt" value="15" />
@@ -54,7 +52,7 @@
           <entry key="CSS" value="2736" />
           <entry key="DBN-SQL" value="123" />
           <entry key="HTML" value="9065" />
-          <entry key="JavaScript" value="12007" />
+          <entry key="JavaScript" value="12027" />
           <entry key="PLAIN_TEXT" value="48" />
           <entry key="Python" value="30780" />
           <entry key="SQL" value="12" />
@@ -201,8 +199,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="253">
-                  <caret line="343" column="9" lean-forward="true" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
+                <state relative-caret-position="311">
+                  <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
                 </state>
               </provider>
             </entry>
@@ -247,11 +245,11 @@
       <find>flex</find>
       <find>select</find>
       <find>type</find>
-      <find>toAdd</find>
       <find>Save</find>
       <find>card_type</find>
       <find>search</find>
       <find>active</find>
+      <find>toAdd</find>
     </findStrings>
     <replaceStrings>
       <replace>ilike</replace>
@@ -484,7 +482,7 @@
     <frame x="-8" y="-8" width="1936" height="1066" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.49690402" visible="true" weight="0.08635394" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49690402" visible="true" weight="0.08635394" />
       <window_info id="Structure" order="1" sideWeight="0.503096" side_tool="true" weight="0.09701493" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info id="DB Browser" order="3" />
@@ -496,7 +494,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" visible="true" weight="0.2972103" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" visible="true" weight="0.2972103" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.30686694" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.21244635" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
@@ -753,8 +751,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="253">
-          <caret line="343" column="9" lean-forward="true" selection-start-line="343" selection-start-column="9" selection-end-line="343" selection-end-column="9" />
+        <state relative-caret-position="311">
+          <caret line="196" lean-forward="true" selection-start-line="196" selection-end-line="196" />
         </state>
       </provider>
     </entry>

@@ -253,10 +253,10 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
 
     $scope.card = null;
 
-    $rootScope.$watch("active", function(){
-        if($rootScope.active != null){
+    $rootScope.$watch("toAdd", function(){
+        if($rootScope.toAdd != null){
             return $http
-                .get('/card/'+$rootScope.active.id)
+                .get('/card/'+$rootScope.toAdd.id)
                 .then(function(res){
                     if(res.data.error == null){
                         $scope.card = res.data;
