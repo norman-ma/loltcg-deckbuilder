@@ -422,7 +422,7 @@ def update_card(id):
             path = os.path.join('app/static/cards/', str(id) + '.jpg')
             file.save(path)
 
-        data = json.JSONDecoder(request.data)
+        data = request.form
 
         ex = db.session
         sql = 'select * from card where card.card_id = ' + str(id) + ';'

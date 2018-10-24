@@ -276,15 +276,11 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
         "cardtype": "",
         "epithet": "",
         "region": "",
-        "class1": "",
-        "class2": "",
-        "type1": "",
-        "type2": "",
+        "class": ["", ""],
+        "type": ["", ""],
         "hp": "",
         "ad": "",
         "ap": "",
-        "type": "",
-        "monster_type": "",
         "belongs_to": "",
         "stats":[]
     };
@@ -309,7 +305,33 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
         $rootScope.active = null;
         var fd = new FormData();
         fd.append('file', $("#img-update")[0].files[0]);
-        fd.append('data', angular.toJson($scope.data));
+        for(let key in $scope.data){
+            switch(key){
+                case('class'):
+                    fd.append('class1', $scope.data.class[0]);
+                    if($scope.data.class[1] !== ""){
+                        fd.append('class2', $scope.data.class[1])
+                    }else{
+                        fd.append('class2', "NULL")
+                    }
+                case('type'):
+                    if($scope.data.cardtype === 'CHAMPION') {
+                        fd.append('type1', $scope.data.type[0]);
+                        if ($scope.data.type[1] !== "") {
+                            fd.append('type2', $scope.data.type[1])
+                        } else {
+                            fd.append('type2', "NULL")
+                        }
+                    }else{
+                        fd.append('type', $scope.data.type);
+                    }
+                    break;
+                default:
+                    fd.append(key, $scope.data[key]);
+                    break;
+
+            }
+        }
         $http
             .post('/card/'+$scope.data.id+'/update',fd,{
                 headers: {'Content-Type': undefined}

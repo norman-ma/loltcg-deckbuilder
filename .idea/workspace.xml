@@ -3,6 +3,7 @@
   <component name="ChangeListManager">
     <list default="true" id="8766e8ab-c010-443c-973f-e9db52648ef7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,8 +42,8 @@
           <entry key="Python Console" value="908" />
           <entry key="css" value="2736" />
           <entry key="html" value="9162" />
-          <entry key="js" value="12257" />
-          <entry key="py" value="30098" />
+          <entry key="js" value="12816" />
+          <entry key="py" value="30103" />
           <entry key="sql" value="135" />
           <entry key="txt" value="15" />
         </counts>
@@ -52,9 +53,9 @@
           <entry key="CSS" value="2736" />
           <entry key="DBN-SQL" value="123" />
           <entry key="HTML" value="9162" />
-          <entry key="JavaScript" value="12257" />
+          <entry key="JavaScript" value="12816" />
           <entry key="PLAIN_TEXT" value="48" />
-          <entry key="Python" value="31006" />
+          <entry key="Python" value="31011" />
           <entry key="SQL" value="12" />
         </counts>
       </usages-collector>
@@ -110,26 +111,26 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/static/css/app.css">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="1700">
+                <state relative-caret-position="573">
                   <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/views.py">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="294">
-                  <caret line="429" column="22" lean-forward="true" selection-start-line="429" selection-start-column="22" selection-end-line="429" selection-end-column="22" />
+                <state relative-caret-position="243">
+                  <caret line="426" column="23" lean-forward="true" selection-start-line="426" selection-start-column="23" selection-end-line="426" selection-end-column="23" />
                   <folding>
                     <element signature="e#229#242#0" expanded="true" />
-                    <marker date="1540356043888" expanded="true" signature="22061:22064" ph="..." />
+                    <marker date="1540359806836" expanded="true" signature="22043:22046" ph="..." />
                   </folding>
                 </state>
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/app/templates/update.html">
               <provider selected="true" editor-type-id="text-editor">
                 <state relative-caret-position="255">
@@ -199,8 +200,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="315">
-                  <caret line="314" column="52" lean-forward="true" selection-start-line="314" selection-start-column="52" selection-end-line="314" selection-end-column="52" />
+                <state relative-caret-position="440">
+                  <caret line="330" column="26" selection-start-line="330" selection-start-column="26" selection-end-line="330" selection-end-column="26" />
                 </state>
               </provider>
             </entry>
@@ -248,8 +249,8 @@
       <find>toAdd</find>
       <find>{{</find>
       <find>}}</find>
-      <find>cham</find>
       <find>update</find>
+      <find>cham</find>
     </findStrings>
     <replaceStrings>
       <replace>ilike</replace>
@@ -299,9 +300,9 @@
         <option value="$PROJECT_DIR$/app/static/css/app.css" />
         <option value="$PROJECT_DIR$/app/templates/home.html" />
         <option value="$PROJECT_DIR$/app/templates/deckbuilder.html" />
-        <option value="$PROJECT_DIR$/app/views.py" />
         <option value="$PROJECT_DIR$/app/templates/update.html" />
         <option value="$PROJECT_DIR$/app/static/js/app.js" />
+        <option value="$PROJECT_DIR$/app/views.py" />
       </list>
     </option>
   </component>
@@ -690,13 +691,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/css/app.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1700">
-          <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/newcard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="3111">
@@ -732,17 +726,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="294">
-          <caret line="429" column="22" lean-forward="true" selection-start-line="429" selection-start-column="22" selection-end-line="429" selection-end-column="22" />
-          <folding>
-            <element signature="e#229#242#0" expanded="true" />
-            <marker date="1540356043888" expanded="true" signature="22061:22064" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/templates/update.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
@@ -750,10 +733,28 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/css/app.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="573">
+          <caret line="100" column="29" selection-start-line="100" selection-start-column="29" selection-end-line="100" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="315">
-          <caret line="314" column="52" lean-forward="true" selection-start-line="314" selection-start-column="52" selection-end-line="314" selection-end-column="52" />
+        <state relative-caret-position="148">
+          <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="243">
+          <caret line="426" column="23" lean-forward="true" selection-start-line="426" selection-start-column="23" selection-end-line="426" selection-end-column="23" />
+          <folding>
+            <element signature="e#229#242#0" expanded="true" />
+            <marker date="1540359806836" expanded="true" signature="22043:22046" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>
