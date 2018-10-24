@@ -32,7 +32,7 @@
                 <option value="RUNETERRA">Runeterra</option>
             </select><br/>
             <label>class1:</label>
-            <select ng-model="data.class1">
+            <select ng-model="data.class[0]">
                 <option value=""></option>
                 <option value="MAGE">Mage</option>
                 <option value="BURST">Burst</option>
@@ -52,7 +52,7 @@
                 <option value="WARDEN">Warden</option>
             </select><br/>
             <label>class2:</label>
-            <select ng-model="data.class2">
+            <select ng-model="data.class[1]">
                 <option value=""></option>
                 <option value="MAGE">Mage</option>
                 <option value="BURST">Burst</option>
@@ -72,7 +72,7 @@
                 <option value="WARDEN">Warden</option>
             </select><br/>
             <label>type1:</label>
-            <select ng-model="data.type1">
+            <select ng-model="data.type[0]">
                 <option value=""></option>
                 <option value="ASPECT">Aspect</option>
                 <option value="CELESTIAL">Celestial</option>
@@ -91,7 +91,7 @@
                 <option value="YORDLE">Yordle</option>
             </select><br/>
             <label>type2:</label>
-            <select ng-model="data.type2">
+            <select ng-model="data.type[1]">
                 <option value=""></option>
                 <option value="ASPECT">Aspect</option>
                 <option value="CELESTIAL">Celestial</option>
@@ -113,7 +113,7 @@
         <div ng-if="data.cardtype == 'CHAMPION' || data.card_type == 'ITEM' || data.card_type == 'PET' || data.card_type == 'NEUTRALMONSTER'">
             <label>hp:</label><input type="number" ng-model="data.hp" min="0"/>
             <label>ad:</label><input type="number" ng-model="data.ad" min="0"/>
-            <label ng-if="data.card_type == 'CHAMPION' || data.card_type == 'ITEM'">ap:</label><input  ng-if="data.card_type == 'CHAMPION' || data.card_type == 'ITEM'" type="number" ng-model="data.ap" min="0"/><br/>
+            <label ng-if="data.cardtype == 'CHAMPION' || data.card_type == 'ITEM'">ap:</label><input  ng-if="data.cardtype == 'CHAMPION' || data.card_type == 'ITEM'" type="number" ng-model="data.ap" min="0"/><br/>
         </div>
         <div ng-if="data.cardtype == 'SUMMONERSPELL'">
             <label>spell_type:</label>
