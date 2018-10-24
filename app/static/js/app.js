@@ -286,61 +286,22 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
         "spell_type": "",
         "monster_type": "",
         "belongs_to": "",
-        "stat_name": [""],
-        "qty": [""]
+        "stats":[]
     };
 
     $scope.plusOne = function(){
-        $scope.data.stat_name.push("");
-        $scope.data.qty.push("");
-        console.log($scope.data.stat_name,$scope.data.qty)
+        $scope.stats.push({stat: "", qty: 0);
+        console.log($scope.data.stats)
     };
 
     $scope.minusOne = function(){
-        $scope.data.stat_name.splice(-1,1);
-        $scope.data.qty.splice(-1,1);
-        console.log($scope.data.stat_name,$scope.data.qty)
+        $scope.data.stats.splice(-1,1);
+        console.log($scope.data.stats)
     };
 
     $scope.$watch('card',function(){
         if($rootScope.card !== null){
-            $scope.data.id = $scope.card.id;
-            $scope.data.card_type = $scope.card.cardtype;
-            $scope.data.name = $scope.card.name;
-            $scope.data.text = $scope.card.text;
-            switch($scope.data.card_type){
-                case('CHAMPION'):
-                     $scope.data.epithet = $scope.card.epithet;
-                     $scope.data.region = $scope.card.region;
-                     $scope.data.class1 = $scope.card.class1;
-                     $scope.data.class2 = $scope.card.class2;
-                     $scope.data.type1 = $scope.card.type1;
-                     $scope.data.type2 = $scope.card.type2;
-                     $scope.data.hp = $scope.card.hp;
-                     $scope.data.ad = $scope.card.ad;
-                     $scope.data.ap = $scope.card.ap;
-                     break;
-                case('PET'):
-                     $scope.data.hp = $scope.card.hp;
-                     $scope.data.ad = $scope.card.ad;
-                     break;
-                case('ITEM'):
-                     $scope.data.hp = $scope.card.hp;
-                     $scope.data.ad = $scope.card.ad;
-                     $scope.data.ap = $scope.card.ap;
-                     for(let stat of $scope.card.stats){
-                         $scope.data.stat_name = stat.stat;
-                         $scope.data.qty = stat.qty;
-                     }
-                     break;
-                case('SUMMONERSPELL'):
-                    $scope.data.spell_type = $scope.card.type;
-                    break;
-                case('NEUTRALMONSTER'):
-                     $scope.data.hp = $scope.card.hp;
-                     $scope.data.ad = $scope.card.ad;
-                     break;
-            }
+            $scope.data = $scope.card;
         }
     });
 
