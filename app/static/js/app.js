@@ -273,7 +273,7 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
         "id": "",
         "name": "",
         "text": "",
-        "card_type": "",
+        "cardtype": "",
         "epithet": "",
         "region": "",
         "class1": "",
@@ -283,14 +283,14 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
         "hp": "",
         "ad": "",
         "ap": "",
-        "spell_type": "",
+        "type": "",
         "monster_type": "",
         "belongs_to": "",
         "stats":[]
     };
 
     $scope.plusOne = function(){
-        $scope.stats.push({stat: "", qty: 0);
+        $scope.stats.push({stat: "", qty: 0});
         console.log($scope.data.stats)
     };
 
