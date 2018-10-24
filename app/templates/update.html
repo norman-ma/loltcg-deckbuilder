@@ -4,7 +4,7 @@
 
 <div ng-controller="UpdateController" id="update-container">
     <h1 class="page-header update-page">Update Card</h1>
-    <form id="update-form" name="load-form" enctype="multipart/form-data" ng-submit="update()" method="post">
+    <form id="update-form" enctype="multipart/form-data" ng-submit="update()" method="post">
         <label>ID:</label><input type="text" ng-model="data.id" id="id-update" readonly /><br/>
         <label>name:</label><input type="text" ng-model="data.name"/><br/>
         <div>

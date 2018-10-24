@@ -309,11 +309,7 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
         $rootScope.active = null;
         var fd = new FormData();
         fd.append('file', $("#img-update")[0].files[0]);
-        var n = Object.keys($scope.data)
-        for(key in n){
-            fd.append(n[key],$scope.data[n[key]])
-            //console.log(n[key],$scope.data[n[key]])
-        }
+        fd.append('data', angular.toJson($scope.data));
         $http
             .post('/card/'+$scope.id+'/update',fd,{
                 headers: {'Content-Type': undefined}

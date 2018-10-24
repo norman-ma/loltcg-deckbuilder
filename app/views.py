@@ -10,7 +10,8 @@ import os
 import ast
 import random
 from app import app, db
-from flask import render_template, request, redirect, url_for, flash, json, jsonify, send_file, send_from_directory, make_response
+from flask import render_template, request, redirect, url_for, flash, json, jsonify, send_file, send_from_directory, \
+    make_response
 from app.models import *
 import xml.etree.ElementTree as xml_tree
 from werkzeug.utils import secure_filename
@@ -44,7 +45,6 @@ def get_ids():
             out.append(r[0])
         idset = True
         return out
-
 
 
 def next_id():
@@ -422,7 +422,7 @@ def update_card(id):
             path = os.path.join('app/static/cards/', str(id) + '.jpg')
             file.save(path)
 
-        data = request.form
+        data = json.JSONDecoder(request.data)
 
         ex = db.session
         sql = 'select * from card where card.card_id = ' + str(id) + ';'
@@ -478,25 +478,25 @@ def update_card(id):
                 sql += 'region = \'' + data['region'] + '\' '
                 comma = True
 
-            if data['class1'] != '':
+            if data['class'][0] != '':
                 if comma:
                     sql += ', '
                 sql += 'class1 = \'' + data['class1'] + '\' '
                 comma = True
 
-            if data['class2'] != '':
+            if data['class'][1] != '':
                 if comma:
                     sql += ', '
                 sql += 'class2 = \'' + data['class2'] + '\' '
                 comma = True
 
-            if data['type1'] != '':
+            if data['type'][1] != '':
                 if comma:
                     sql += ', '
                 sql += 'type1 = \'' + data['type1'] + '\' '
                 comma = True
 
-            if data['type2'] != '':
+            if data['type'][2] != '':
                 if comma:
                     sql += ', '
                 sql += 'type2 = \'' + data['type2'] + '\' '
@@ -547,7 +547,7 @@ def update_card(id):
             ex.commit()
 
         if ctype == "SUMMONERSPELL":
-            sql = 'update neutral_monster set '
+            sql = 'update summoner_spell set '
 
             if data['spell_type'] != '':
                 sql += 'spell_type = ' + data['spell_type']
@@ -587,26 +587,23 @@ def update_card(id):
             for s in res:
                 stats.append(s[0])
 
-            item_stats = ast.literal_eval('[\'' + data['stat_name'].replace(',', '\',\'') + '\']')
-            qtys = ast.literal_eval('[ \'' + data['qty'].replace(',', '\',\'') + '\' ]')
-            for i in range(len(item_stats)):
+            for data in data['stats']:
 
-                if item_stats[i].decode('utf-8') in stats:
+                if data['stats'] in stats:
 
                     sql = 'update item_has set '
 
-                    if qtys[i] != '':
-                        sql += 'qty = ' + str(qtys[i])
+                    if data.qty != '':
+                        sql += 'qty = ' + str(data.qty)
 
-                    sql += ' where card_id = ' + str(id) + ' and stat_name = \'' + item_stats[
-                        i] + '\';'
+                    sql += ' where card_id = ' + str(id) + ' and stat_name = \'' + data['stats'] + '\';'
 
                     ex.execute(sql)
                     ex.commit()
 
                 else:
 
-                    sql = 'insert into item_has values (' + id + ',\'' + item_stats[i] + '\',' + str(qtys[i]) + ');'
+                    sql = 'insert into item_has values (' + id + ',\'' + data['stats'] + '\',' + data['qty'] + ');'
 
                     ex.execute(sql)
                     ex.commit()
@@ -735,7 +732,8 @@ def save_deck(name):
         file = open('app/static/deck/' + name + '.dek', 'w')
         text = "<deck version=\"0.1\">\n\t<meta>\n\t\t<game>loltcg</game>\n\t</meta>\n\t<superzone name=\"Deck\">\n"
         for c in data['cards']:
-            text += "\t\t<card><name id=\"" + str(c['id']) + "\" type=\"" + c['type'] + "\">" + c['name'] + "</name><set>Alpha</set></card>\n"
+            text += "\t\t<card><name id=\"" + str(c['id']) + "\" type=\"" + c['type'] + "\">" + c[
+                'name'] + "</name><set>Alpha</set></card>\n"
 
         text += "\t</superzone>\n</deck>"
 
@@ -777,7 +775,6 @@ def load_deck():
         out = {'error': None, 'data': cards, 'message': 'Success'}
 
         return jsonify(out)
-
 
 
 ###
