@@ -311,7 +311,7 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
         fd.append('file', $("#img-update")[0].files[0]);
         fd.append('data', angular.toJson($scope.data));
         $http
-            .post('/card/'+$scope.id+'/update',fd,{
+            .post('/card/'+$scope.data.id+'/update',fd,{
                 headers: {'Content-Type': undefined}
             })
             .then(function(res){

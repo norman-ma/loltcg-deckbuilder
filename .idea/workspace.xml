@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="8766e8ab-c010-443c-973f-e9db52648ef7" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/app/static/js/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/static/js/app.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/templates/update.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/templates/update.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/views.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -43,7 +41,7 @@
           <entry key="Python Console" value="908" />
           <entry key="css" value="2736" />
           <entry key="html" value="9162" />
-          <entry key="js" value="12252" />
+          <entry key="js" value="12257" />
           <entry key="py" value="30098" />
           <entry key="sql" value="135" />
           <entry key="txt" value="15" />
@@ -54,7 +52,7 @@
           <entry key="CSS" value="2736" />
           <entry key="DBN-SQL" value="123" />
           <entry key="HTML" value="9162" />
-          <entry key="JavaScript" value="12252" />
+          <entry key="JavaScript" value="12257" />
           <entry key="PLAIN_TEXT" value="48" />
           <entry key="Python" value="31006" />
           <entry key="SQL" value="12" />
@@ -201,8 +199,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="264">
-                  <caret line="311" column="55" selection-start-line="311" selection-start-column="55" selection-end-line="311" selection-end-column="55" />
+                <state relative-caret-position="315">
+                  <caret line="314" column="52" lean-forward="true" selection-start-line="314" selection-start-column="52" selection-end-line="314" selection-end-column="52" />
                 </state>
               </provider>
             </entry>
@@ -301,9 +299,9 @@
         <option value="$PROJECT_DIR$/app/static/css/app.css" />
         <option value="$PROJECT_DIR$/app/templates/home.html" />
         <option value="$PROJECT_DIR$/app/templates/deckbuilder.html" />
-        <option value="$PROJECT_DIR$/app/static/js/app.js" />
         <option value="$PROJECT_DIR$/app/views.py" />
         <option value="$PROJECT_DIR$/app/templates/update.html" />
+        <option value="$PROJECT_DIR$/app/static/js/app.js" />
       </list>
     </option>
   </component>
@@ -497,9 +495,9 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32939914" />
       <window_info anchor="bottom" id="Version Control" order="7" weight="0.32939914" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" weight="0.2972103" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" sideWeight="0.49947312" visible="true" weight="0.2972103" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50052685" side_tool="true" weight="0.30686694" />
-      <window_info active="true" anchor="bottom" id="Python Console" order="10" visible="true" weight="0.21244635" />
+      <window_info anchor="bottom" id="Python Console" order="10" weight="0.21244635" />
       <window_info anchor="bottom" id="DB Execution Console" order="11" />
       <window_info anchor="bottom" id="Docker" order="12" show_stripe_button="false" />
       <window_info anchor="bottom" id="Database Changes" order="13" show_stripe_button="false" />
@@ -734,13 +732,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="148">
-          <caret line="68" column="28" selection-start-line="68" selection-start-column="28" selection-end-line="68" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/views.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="294">
@@ -756,6 +747,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="255">
           <caret line="15" column="69" selection-start-line="15" selection-start-column="69" selection-end-line="15" selection-end-column="69" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/static/js/app.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="315">
+          <caret line="314" column="52" lean-forward="true" selection-start-line="314" selection-start-column="52" selection-end-line="314" selection-end-column="52" />
         </state>
       </provider>
     </entry>
