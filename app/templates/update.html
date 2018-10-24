@@ -13,6 +13,7 @@
         </div>
         <label id="text-label">text:</label><textarea ng-model="data.text"></textarea><br/>
        <div ng-if="data.card_type=='CHAMPION'">
+            <label>epithet:</label><input type="text" ng-model="data.epithet"/><br/>
             <label>region:</label>
             <select ng-model="data.region">
                 <option value=""></option>

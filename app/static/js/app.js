@@ -251,6 +251,24 @@ app.controller("DeckController",["$scope","$http","$rootScope",function($scope,$
 
 app.controller("UpdateController",['$scope','$http','$rootScope',function($scope,$http,$rootScope){
 
+    $scope.card = null;
+
+    $rootScope.$watch("active", function(){
+        if($rootScope.active != null){
+            return $http
+                .get('/card/'+$rootScope.active.id)
+                .then(function(res){
+                    if(res.data.error == null){
+                        $scope.card = res.data;
+                        //$scope.card.img = $rootScope.active.img;
+                        //console.log($scope.card);
+                    }
+                });
+        } else{
+            $scope.card = null;
+        }
+    });
+
     $scope.data = {
         "id": "",
         "name": "",
@@ -265,30 +283,64 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
         "hp": "",
         "ad": "",
         "ap": "",
-        "belongs_to": "",
         "spell_type": "",
         "monster_type": "",
         "belongs_to": "",
         "stat_name": [""],
         "qty": [""]
-    }
+    };
 
     $scope.plusOne = function(){
-        $scope.data.stat_name.push("")
-        $scope.data.qty.push("")
+        $scope.data.stat_name.push("");
+        $scope.data.qty.push("");
         console.log($scope.data.stat_name,$scope.data.qty)
-    }
+    };
 
     $scope.minusOne = function(){
-        $scope.data.stat_name.splice(-1,1)
-        $scope.data.qty.splice(-1,1)
+        $scope.data.stat_name.splice(-1,1);
+        $scope.data.qty.splice(-1,1);
         console.log($scope.data.stat_name,$scope.data.qty)
-    }
+    };
 
-    $rootScope.$watch('toAdd',function(){
-        if($rootScope.toAdd !== null){
-            $scope.data.id = $rootScope.toAdd.id;
-            $scope.data.card_type = $rootScope.toAdd.type;
+    $scope.$watch('card',function(){
+        if($rootScope.card !== null){
+            $scope.data.id = $scope.card.id;
+            $scope.data.card_type = $scope.card.cardtype;
+            $scope.data.name = $scope.card.name;
+            $scope.data.text = $scope.card.text;
+            switch($scope.data.card_type){
+                case('CHAMPION'):
+                     $scope.data.epithet = $scope.card.epithet;
+                     $scope.data.region = $scope.card.region;
+                     $scope.data.class1 = $scope.card.class1;
+                     $scope.data.class2 = $scope.card.class2;
+                     $scope.data.type1 = $scope.card.type1;
+                     $scope.data.type2 = $scope.card.type2;
+                     $scope.data.hp = $scope.card.hp;
+                     $scope.data.ad = $scope.card.ad;
+                     $scope.data.ap = $scope.card.ap;
+                     break;
+                case('PET'):
+                     $scope.data.hp = $scope.card.hp;
+                     $scope.data.ad = $scope.card.ad;
+                     break;
+                case('ITEM'):
+                     $scope.data.hp = $scope.card.hp;
+                     $scope.data.ad = $scope.card.ad;
+                     $scope.data.ap = $scope.card.ap;
+                     for(let stat of $scope.card.stats){
+                         $scope.data.stat_name = stat.stat;
+                         $scope.data.qty = stat.qty;
+                     }
+                     break;
+                case('SUMMONERSPELL'):
+                    $scope.data.spell_type = $scope.card.type;
+                    break;
+                case('NEUTRALMONSTER'):
+                     $scope.data.hp = $scope.card.hp;
+                     $scope.data.ad = $scope.card.ad;
+                     break;
+            }
         }
     });
 
@@ -300,7 +352,7 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
         for(key in n){
             fd.append(n[key],$scope.data[n[key]])
             //console.log(n[key],$scope.data[n[key]])
-        };
+        }
         $http
             .post('/card/'+$scope.id+'/update',fd,{
                 headers: {'Content-Type': undefined}
@@ -312,7 +364,7 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
                         'name': res.data.name
                     }
             });
-    }
+    };
 
     $scope.new = function(){
         $rootScope.active = null;
@@ -322,7 +374,7 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
         for(key in n){
             fd.append(n[key],$scope.data[n[key]])
             //console.log(n[key],$scope.data[n[key]])
-        };
+        }
         $http
             .post('/card/new',fd,{
                 headers: {'Content-Type': undefined}
