@@ -334,7 +334,7 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
         }
         $http
             .post('/card/'+$scope.data.id+'/update',fd,{
-                headers: {'Content-Type': undefined}
+                headers: {'Content-Type': "multipart/form-data"}
             })
             .then(function(res){
                 $rootScope.active = {
