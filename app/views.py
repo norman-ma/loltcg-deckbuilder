@@ -421,7 +421,7 @@ def update_card(id):
         try:
             file = request.files['file']
         except Exception as e:
-            print e;
+            print (e);
 
         if file is not None:
             path = os.path.join('app/static/cards/', str(id) + '.jpg')
@@ -602,8 +602,6 @@ def update_card(id):
             stats = []
             for s in res:
                 stats.append(s[0])
-
-            print stats
 
             statname = []
 
