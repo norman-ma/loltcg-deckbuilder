@@ -159,7 +159,7 @@
                 <option value="NEUTRALMONSTER">Neutral Monster</option>
                 <option value="ITEM">Item</option>
             </select>
-            <button ng-click="search()">Search</button><button ng-click="clear()">Clear</button><br>
+            <button ng-click="search()">Search</button><button ng-click="clear()">Clear</button><span id="result-count" ng-if="cards.length > 0"><< cards.length>> results</span><br>
         </div>
 
         <div id="options" ng-if="data.card_type !== ''">
