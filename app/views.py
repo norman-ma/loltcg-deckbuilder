@@ -417,7 +417,12 @@ def update():
 def update_card(id):
     if request.method == "POST":
 
-        file = request.files['file']
+        file = None
+        try:
+            file = request.files['file']
+        except Exception as e:
+            print e;
+
         if file is not None:
             path = os.path.join('app/static/cards/', str(id) + '.jpg')
             file.save(path)
@@ -425,7 +430,7 @@ def update_card(id):
         data = request.form
 
         ex = db.session
-        sql = 'select * from card where card.card_id = ' + str(id) + ';'
+        sql = 'select * from card where card.card_id = ' + str(id) + ' ;'
         res = ex.execute(sql).first()
         ctype = res[3]
 
@@ -439,7 +444,9 @@ def update_card(id):
         if data['text'] != '':
             if comma:
                 sql += ','
-            sql += ' card_text = \'' + data['text'].replace('\\n', '\n') + '\''
+
+            text = data['text'].replace('\'', '\'\'')
+            sql += ' card_text = \'' + text.replace('\\n', '\n') + '\''
 
         sql += ' where card_id = ' + str(id) + ';'
 
@@ -478,28 +485,37 @@ def update_card(id):
                 sql += 'region = \'' + data['region'] + '\' '
                 comma = True
 
-            if data['class'][0] != '':
+            if data['class1'] != '':
                 if comma:
                     sql += ', '
                 sql += 'class1 = \'' + data['class1'] + '\' '
                 comma = True
 
-            if data['class'][1] != '':
+            if data['class2'] != '':
                 if comma:
                     sql += ', '
                 sql += 'class2 = \'' + data['class2'] + '\' '
                 comma = True
+            else:
+                if comma:
+                    sql += ', '
+                sql += 'class2 = \'NULL\' '
+                comma = True
 
-            if data['type'][1] != '':
+            if data['type1'] != '':
                 if comma:
                     sql += ', '
                 sql += 'type1 = \'' + data['type1'] + '\' '
                 comma = True
 
-            if data['type'][2] != '':
+            if data['type2'] != '':
                 if comma:
                     sql += ', '
                 sql += 'type2 = \'' + data['type2'] + '\' '
+            else:
+                if comma:
+                    sql += ', '
+                sql += 'type2 = \'NULL\' '
 
             sql += ' where card_id = ' + str(id) + ';'
 
@@ -581,29 +597,43 @@ def update_card(id):
             ex.execute(sql)
             ex.commit()
 
-            sql = 'select stat_name from item_has where card_id = ' + str(id) + ';'
+            sql = 'select stat_name from item_has where card_id = ' + str(id) + ' ;'
             res = ex.execute(sql).fetchall()
             stats = []
             for s in res:
                 stats.append(s[0])
 
-            for data in data['stats']:
+            print stats
 
-                if data['stats'] in stats:
+            statname = []
+
+            for st in json.loads(data['stats']):
+                statname.append(st['stat'])
+
+                if st['stat'] in stats:
 
                     sql = 'update item_has set '
 
-                    if data.qty != '':
-                        sql += 'qty = ' + str(data.qty)
+                    if st['qty'] != 0:
+                        sql += 'qty = ' + str(st['qty'])
 
-                    sql += ' where card_id = ' + str(id) + ' and stat_name = \'' + data['stats'] + '\';'
+                        sql += ' where card_id = ' + str(id) + ' and stat_name = \'' + st['stat'] + '\';'
+
+                        ex.execute(sql)
+                        ex.commit()
+
+                else:
+
+                    sql = 'insert into item_has values (' + id + ',\'' + st['stat'] + '\',' + str(st['qty']) + ');'
 
                     ex.execute(sql)
                     ex.commit()
 
-                else:
+            for stat in stats:
 
-                    sql = 'insert into item_has values (' + id + ',\'' + data['stats'] + '\',' + data['qty'] + ');'
+                if stat not in statname:
+
+                    sql = 'delete from item_has where card_id = ' + id + ' and stat_name = \'' + stat + '\' ;'
 
                     ex.execute(sql)
                     ex.commit()
@@ -717,8 +747,7 @@ def new_card():
 
                 stats.append({"stat": item_stats[i], "qty": qtys[i]})
 
-            out = {"id": id, "img": img, "name": name, "text": text, "cardtype": ctype, "stats": stats, "hp": hp,
-                   "ad": ad, "ap": ap}
+            out = {"id": id, "img": img, "name": name, "text": text, "cardtype": ctype, "stats": stats, "hp": hp, "ad": ad, "ap": ap}
 
         return jsonify(out)
 

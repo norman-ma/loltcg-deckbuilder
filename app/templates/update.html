@@ -125,8 +125,8 @@
             </select>
         </div>
         <div ng-if="data.cardtype == 'ITEM'">
-            <label>stat_name:</label><button ng-click="plusOne()">+</button><button ng-if="data.stat_name.length > 1" ng-click="minusOne()">-</button>
-            <div ng-repeat="stat in data.stats">
+            <label>stats:</label><button ng-click="addStat()">Add</button>
+            <div ng-repeat="stat in data.stats track by $index">
                 <input type="number" ng-model="stat.qty" min="0"/>
                 <select ng-model="stat.stat">
                     <option value=""></option>
@@ -138,6 +138,7 @@
                     <option value="RESISTANCE">Resistance</option>
                     <option value="LIFESTEAL">Life Steal</option>
                 </select>
+                <button ng-if="data.stats.length > 1" ng-click="deleteStat($index)">-</button>
             </div>
         </div>
 
@@ -270,7 +271,7 @@
                 <h2><< card.name >></h2>
             </div>
             <div ng-if="card.cardtype=='CHAMPION'" id="champion-preview">
-                <p><span id="epithet"><< card.epithet >></span><br/><< card.region >> <br/> << card.class[0] >><span ng-if="card.class[1] != null"> | << card.class[1] >> </span> <br/> << card.type[0] >><span ng-if="card.type[1] != null"> | << card.type[1] >></span><br/> HP << card.hp >> | AD << card.ad >> | AP << card.ap >>
+                <p><span id="epithet"><< card.epithet >></span><br/><< card.region >> <br/> << card.class[0] >><span ng-if="card.class[1] != 'null'"> | << card.class[1] >> </span> <br/> << card.type[0] >><span ng-if="card.type[1] != 'null'"> | << card.type[1] >></span><br/> HP << card.hp >> | AD << card.ad >> | AP << card.ap >>
                 </p>
             </div>
             <div ng-if="card.cardtype=='ITEM'" id="item-preview">
@@ -283,7 +284,7 @@
             <div ng-if="card.cardtype=='PET' || card.cardtype=='NEUTRALMONSTER'" id="monster-preview">
                 <p>HP << card.hp >> | AD << card.ad >> | AP << card.ap >></p>
             </div>
-            <p id="card-text"><< card.text >></p>
+            <div id="card-text"></div>
         </div>
     </div>
 </div>

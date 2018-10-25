@@ -25,19 +25,38 @@ app.controller("PreviewController",['$scope','$http','$rootScope',function($scop
     $scope.card = null;
     $rootScope.active = null;
 
+    var fix = function(str){
+        return str.replace("\'\'", "\'")
+    };
+
+    $scope.html = function(text){
+        return $.parseHTML(text);
+    };
+
     $rootScope.$watch("active", function(){
         if($rootScope.active != null){
             return $http
                 .get('/card/'+$rootScope.active.id)
                 .then(function(res){
                     if(res.data.error == null){
-                        $scope.card = res.data;
+                        let out =  res.data;
+                        for(let key in out){
+                            if(typeof(out[key]) === 'string'){
+                                out[key] = fix(out[key]);
+                            }
+                        }
+                        console.log(out);
+                        $scope.card = out;
+                        let html = $scope.html($scope.card.text);
+                        $('#card-text').html('');
+                        for(let line of html){
+                            $('#card-text').append(line);
+                        }
+                        $scope.$apply();
                         //$scope.card.img = $rootScope.active.img;
                         //console.log($scope.card);
                     }
                 });
-        } else{
-            $scope.card = null;
         }
     });
 
@@ -79,6 +98,7 @@ app.controller("SearchController",['$scope','$http','$rootScope',function($scope
                 //console.log(res);
                 if(res.data.error == null){
                      $scope.cards = res.data.data;
+
                      //console.log($scope.cards);
                      searchScroll.update();
                 }
@@ -285,13 +305,13 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
         "stats":[]
     };
 
-    $scope.plusOne = function(){
-        $scope.stats.push({stat: "", qty: 0});
+    $scope.addStat = function(){
+        $scope.data.stats.push({stat: "", qty: 0});
         console.log($scope.data.stats)
     };
 
-    $scope.minusOne = function(){
-        $scope.data.stats.splice(-1,1);
+    $scope.deleteStat = function(index){
+        $scope.data.stats.splice(index,1);
         console.log($scope.data.stats)
     };
 
@@ -326,15 +346,18 @@ app.controller("UpdateController",['$scope','$http','$rootScope',function($scope
                         fd.append('type', $scope.data.type);
                     }
                     break;
+                case('stats'):
+                    console.log($scope.data.stats);
+                    fd.append('stats', JSON.stringify($scope.data.stats));
+                    break;
                 default:
                     fd.append(key, $scope.data[key]);
                     break;
-
             }
         }
         $http
             .post('/card/'+$scope.data.id+'/update',fd,{
-                headers: {'Content-Type': "multipart/form-data"}
+                headers: {'Content-Type': undefined}
             })
             .then(function(res){
                 $rootScope.active = {
